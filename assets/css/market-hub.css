@@ -1,0 +1,330 @@
+/* =====================================================================
+ * ADVANCED MARKET HUB STYLES
+ * ===================================================================== */
+
+.market-hub-container {
+    max-width: 96rem;
+    margin: 2rem auto;
+    padding: 0 1.5rem 6rem 1.5rem;
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 1.5rem;
+}
+
+@media (max-width: 1024px) {
+    .market-hub-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Sidebar Widgets */
+.hub-widget {
+    background: #14142b;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 1rem;
+    padding: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.hub-widget-title {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: #FFF;
+    margin: 0 0 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Top Gainer/Loser List */
+.gl-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.gl-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.8125rem;
+}
+
+.gl-item-rank {
+    width: 1.5rem;
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+    color: #64748B;
+}
+
+.gl-item-name {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.gl-item-name strong {
+    color: #E2E8F0;
+    font-weight: 600;
+}
+
+.gl-item-name span {
+    font-size: 0.6875rem;
+    color: #64748B;
+}
+
+.gl-item-change {
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+}
+
+.text-green { color: #5de3ca !important; }
+.text-red { color: #F43F5E !important; }
+.bg-green { background-color: #5de3ca !important; }
+.bg-red { background-color: #F43F5E !important; }
+.bg-green-muted { background-color: rgba(93, 227, 202, 0.1) !important; color: #5de3ca !important;}
+.bg-red-muted { background-color: rgba(244, 63, 94, 0.1) !important; color: #F43F5E !important;}
+
+/* Heatmap Simulated Grid */
+.heatmap-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(40px, auto);
+    gap: 4px;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.heatmap-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.625rem;
+    font-weight: 700;
+    color: #111;
+    padding: 0.25rem;
+    text-align: center;
+    transition: opacity 0.2s;
+    cursor: pointer;
+}
+
+.heatmap-box:hover {
+    opacity: 0.8;
+}
+
+.heatmap-large {
+    grid-column: span 2;
+    grid-row: span 2;
+    font-size: 0.875rem;
+}
+
+/* Sentiment Gauge */
+.sentiment-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding: 1rem 0;
+}
+.gauge-svg {
+    width: 180px;
+    height: 90px;
+}
+.sentiment-labels {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.6875rem;
+    color: #64748B;
+    margin-top: 0.5rem;
+}
+.sentiment-score {
+    position: absolute;
+    bottom: 0.5rem;
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #FFF;
+}
+
+/* Main Hub Content */
+.hub-main {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.hub-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.hub-header h1 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin: 0;
+}
+
+.hub-tabs {
+    display: flex;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 0.25rem;
+    border-radius: 0.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    flex-wrap: wrap;
+}
+
+.hub-tab {
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #94A3B8;
+    background: transparent;
+    border: none;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.hub-tab.active {
+    background: #252541;
+    color: #FFF;
+}
+
+.hub-tab:hover:not(.active) {
+    color: #E2E8F0;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* Data Table */
+.market-table-wrapper {
+    background: #14142b;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 1rem;
+    overflow-x: auto;
+}
+
+.market-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 1000px;
+}
+
+.market-table th {
+    text-align: left;
+    padding: 1rem;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    color: #94A3B8;
+    text-transform: uppercase;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    white-space: nowrap;
+}
+
+.market-table td {
+    padding: 1rem;
+    font-size: 0.8125rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    vertical-align: middle;
+}
+
+.market-table tbody tr:hover {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.td-asset {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.td-asset img {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+}
+
+.td-asset-info strong {
+    display: block;
+    color: #FFF;
+}
+.td-asset-info span {
+    font-size: 0.6875rem;
+    color: #64748B;
+}
+
+.td-num {
+    font-family: 'Space Mono', monospace;
+    font-weight: 600;
+    color: #E2E8F0;
+    white-space: nowrap;
+}
+
+.td-actions {
+    display: flex;
+    gap: 0.25rem;
+}
+
+.btn-mini {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    border-radius: 0.25rem;
+    border: none;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.05);
+    color: #CBD5E1;
+    transition: all 0.2s;
+}
+
+.btn-mini:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #FFF;
+}
+
+.btn-mini.trade {
+    background: #6150d5;
+    color: #FFF;
+}
+
+.btn-mini.trade:hover {
+    background: #7665ef;
+}
+
+/* Flash Animations for Real-Time Updates */
+@keyframes flashGreen {
+    0% { background-color: rgba(93, 227, 202, 0.3); }
+    100% { background-color: transparent; }
+}
+
+@keyframes flashRed {
+    0% { background-color: rgba(244, 63, 94, 0.3); }
+    100% { background-color: transparent; }
+}
+
+.flash-up {
+    animation: flashGreen 1s ease-out;
+}
+
+.flash-down {
+    animation: flashRed 1s ease-out;
+}
+
+/* Loading state */
+.market-loading {
+    padding: 4rem;
+    text-align: center;
+    color: #94A3B8;
+    font-size: 0.875rem;
+}
+.market-loading i {
+    animation: spin 1s linear infinite;
+    margin-bottom: 1rem;
+}
+@keyframes spin {
+    100% { transform: rotate(360deg); }
+}

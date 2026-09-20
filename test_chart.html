@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://unpkg.com/lightweight-charts@4.1.1/dist/lightweight-charts.standalone.production.js"></script>
+</head>
+<body>
+<div id="tvchart" style="width: 400px; height: 200px;"></div>
+<script>
+try {
+  const container = document.getElementById('tvchart');
+  const chart = LightweightCharts.createChart(container, {
+    layout: {
+      background: { type: 'solid', color: 'transparent' },
+      textColor: '#777489',
+    }
+  });
+  
+  const areaSeries = chart.addAreaSeries({
+    lineColor: '#a89bff',
+    topColor: 'rgba(168, 155, 255, 0.4)',
+    bottomColor: 'rgba(168, 155, 255, 0.0)',
+    lineWidth: 2,
+  });
+  
+  console.log("Success: added Area Series");
+} catch (e) {
+  console.error("Error:", e);
+}
+</script>
+</body>
+</html>

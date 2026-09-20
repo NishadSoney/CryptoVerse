@@ -1,0 +1,6 @@
+{
+  "name": "CryptoVerse",
+  "description": "Educational cryptocurrency platform with guided learning, interactive 3D blockchain visualizations, live market discovery, and risk-free paper trading.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
