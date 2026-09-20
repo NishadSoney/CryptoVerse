@@ -53,14 +53,14 @@ if (!isset($active_page)) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><?= ucfirst($active_page) ?> &mdash; CryptoVerse</title>
-  <link rel="stylesheet" href="assets/css/landing.css">
+  <link rel="stylesheet" href="assets/css/landing.css?v=<?= time() ?>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body style="<?= ($active_page !== 'home') ? 'background-color: #080914; color: #F8FAFC; margin: 0; font-family: \'Plus Jakarta Sans\', sans-serif;' : '' ?>">
 
-<main class="dashboard-shell">
+<main class="<?= $active_page === 'learn' ? 'lessons-shell' : 'dashboard-shell' ?>">
   <!-- Top Navigation -->
   <header class="dashboard-nav">
     <a href="index.php" class="brand"><span class="brand-mark">C</span><span class="logo-text"><span class="large-letter">C</span>RYPTO<span class="large-letter">V</span>ERSE</span></a>
@@ -85,7 +85,7 @@ if (!isset($active_page)) {
     <div class="dashboard-welcome">
       <div>
         <div class="section-kicker"><?= $current_date_str ?></div>
-        <h1>Good morning, <?= htmlspecialchars($name) ?>.</h1>
+        <h1>Good morning, <em><?= htmlspecialchars($name) ?>.</em></h1>
         <p>Keep your momentum going. You are building a better mental model one lesson at a time.</p>
       </div>
       <div style="display:flex; gap: 10px;">

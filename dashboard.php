@@ -152,63 +152,38 @@ if ($xp > 0) {
     
     <section class="dashboard-lower" id="learn">
 
+      <?php
+      // Fetch completed lessons for summary
+      $completedStmt = $db->prepare("SELECT l.title, l.key_takeaway FROM user_progress up JOIN lessons l ON up.lesson_id = l.id WHERE up.user_id = :id AND up.status = 'COMPLETED' ORDER BY up.completed_at DESC LIMIT 5");
+      $completedStmt->execute([':id' => $_SESSION['user_id']]);
+      $completedLessons = $completedStmt->fetchAll();
+      ?>
       <div class="lessons-panel">
         <div class="panel-heading">
           <div>
-            <div class="section-kicker">YOUR PATH</div>
-            <h2>Learning journey</h2>
+            <div class="section-kicker">YOUR PROGRESS</div>
+            <h2>Knowledge Unlocked</h2>
           </div>
-          <a href="learn.php">View all <i data-lucide="arrow-right" style="width: 15px; height: 15px;"></i></a>
         </div>
         <div class="lesson-list">
-          <?php if ($xp == 0): ?>
-            <div class="lesson-row selected">
-              <span class="lesson-number">01</span>
+          <?php if (empty($completedLessons)): ?>
+            <div class="lesson-row" style="padding: 25px 0; border: none;">
               <div class="lesson-row-copy">
-                <strong>What is cryptocurrency?</strong>
-                <span>8 min &middot; Foundations</span>
-              </div>
-              <i data-lucide="play" fill="currentColor" style="width: 16px; height: 16px;"></i>
-            </div>
-            <div class="lesson-row">
-              <span class="lesson-number"><i data-lucide="lock-keyhole" style="width: 14px; height: 14px;"></i></span>
-              <div class="lesson-row-copy">
-                <strong>How blockchains keep score</strong>
-                <span>12 min &middot; Blockchain</span>
+                <strong style="font-size: 14px; margin-bottom: 6px;">You haven't completed any lessons yet.</strong>
+                <span style="font-size: 11px;">Start your journey to unlock new insights!</span>
               </div>
             </div>
           <?php else: ?>
-            <div class="lesson-row">
-              <span class="lesson-number"><i data-lucide="check" style="width: 16px; height: 16px;"></i></span>
+            <?php foreach ($completedLessons as $cl): ?>
+            <div class="lesson-row" style="align-items: start; gap: 14px;">
+              <span class="lesson-number" style="margin-top: 2px;"><i data-lucide="check" style="width: 14px; height: 14px; color: var(--mint);"></i></span>
               <div class="lesson-row-copy">
-                <strong>What is cryptocurrency?</strong>
-                <span>8 min &middot; Foundations</span>
+                <strong><?= htmlspecialchars($cl['title']) ?></strong>
+                <span style="line-height: 1.5; margin-top: 4px;"><?= htmlspecialchars($cl['key_takeaway']) ?></span>
               </div>
-              <span class="complete-label">COMPLETE</span>
             </div>
-            <div class="lesson-row selected">
-              <span class="lesson-number">02</span>
-              <div class="lesson-row-copy">
-                <div style="display: flex; align-items: center; gap: 8px;">
-                  <strong>How blockchains keep score</strong>
-                  <span class="section-kicker" style="margin: 0; padding: 2px 6px; background: rgba(16, 185, 129, 0.2); color: var(--mint); border: 1px solid rgba(16, 185, 129, 0.3);">START HERE</span>
-                </div>
-                <span>12 min &middot; Blockchain</span>
-              </div>
-              <i data-lucide="play" fill="currentColor" style="width: 16px; height: 16px;"></i>
-            </div>
+            <?php endforeach; ?>
           <?php endif; ?>
-          
-          <div class="lesson-row">
-            <span class="lesson-number"><i data-lucide="lock-keyhole" style="width: 14px; height: 14px;"></i></span>
-            <div class="lesson-row-copy">
-              <div style="display: flex; align-items: center; gap: 8px;">
-                <strong>Wallets, keys & ownership</strong>
-                <span class="section-kicker" style="margin: 0; padding: 2px 6px; background: rgba(97, 80, 213, 0.2); color: #8d7aff; border: 1px solid rgba(97, 80, 213, 0.3);">GOAL</span>
-              </div>
-              <span>10 min &middot; Foundations</span>
-            </div>
-          </div>
         </div>
       </div>
 
