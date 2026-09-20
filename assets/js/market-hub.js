@@ -295,9 +295,9 @@ async function openStudyModal(symbol) {
     
     document.getElementById('study-asset-title').innerHTML = `
         <span class="coin-icon" style="background:${conf.color}; color:${['XRP','NEAR','APT'].includes(assetBase) ? '#FFF' : '#191525'}">${conf.mark}</span>
-        <div style="display:flex; flex-direction:column; align-items:center; line-height:1.2;">
-            <span style="font-size:18px;">${assetBase}</span>
-            <span style="color:#8c899c; font-size:12px;">${conf.name}</span>
+        <div>
+            <div>${assetBase}</div>
+            <div style="font-size:12px; color:#8c899c; font-weight:400;">${conf.name}</div>
         </div>
     `;
     

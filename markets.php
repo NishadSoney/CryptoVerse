@@ -232,10 +232,10 @@ require_once __DIR__ . '/includes/header.php';
     <div class="study-modal-content">
         <button id="close-modal" class="study-modal-close"><i data-lucide="x" style="width:20px; height:20px;"></i></button>
         <div class="study-modal-header">
-            <div id="study-asset-title" style="display:flex; flex-direction:column; align-items:center; gap:8px; font-size:24px; font-weight:600; color:#FFF;">
+            <div id="study-asset-title" style="display:flex; align-items:center; gap:12px; font-size:24px; font-weight:600; color:#FFF;">
                 <!-- Injected via JS -->
             </div>
-            <div id="study-asset-price" style="text-align:center;">
+            <div id="study-asset-price" style="position:absolute; left:50%; transform:translateX(-50%); text-align:center;">
                 <!-- Injected via JS -->
             </div>
         </div>
@@ -363,8 +363,8 @@ require_once __DIR__ . '/includes/header.php';
 }
 .study-modal-close:hover { color: #FFF; }
 .study-modal-header {
-    display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 12px;
-    border-bottom: 1px solid rgba(255,255,255,0.07); padding-bottom: 20px; margin-bottom: 20px;
+    display: flex; align-items: center; position: relative; min-height: 50px;
+    border-bottom: 1px solid rgba(255,255,255,0.07); padding-bottom: 16px; margin-bottom: 20px;
 }
 .study-analysis-grid {
     display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
