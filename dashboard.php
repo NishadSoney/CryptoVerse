@@ -1,11 +1,10 @@
-//
 
 <?php
 /**
  * CryptoVerse - Dashboard
  * Location: dashboard.php
  */
-
+//l;
 declare(strict_types=1);
 
 require_once __DIR__ . '/config/config.php';
