@@ -15,6 +15,7 @@ let marketData = {};
 let ws = null;
 let currentFilter = 'All'; // 'All' or 'Favorites'
 let currentCategoryFilter = 'All';
+let currentSort = 'default';
 let searchQuery = '';
 let favorites = JSON.parse(localStorage.getItem('cv_favorites')) || [];
 let studyChart = null;
@@ -165,6 +166,24 @@ function setupFilters() {
             });
         });
     }
+
+    // Make "More" buttons functional by sorting the table
+    document.querySelectorAll('.spotlight-heading button').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            const heading = e.target.closest('.spotlight-heading').querySelector('strong').textContent.toLowerCase();
+            
+            if (heading.includes('hot')) currentSort = 'hot';
+            else if (heading.includes('gainer')) currentSort = 'gainers';
+            else if (heading.includes('volume')) currentSort = 'volume';
+            else if (heading.includes('loser')) currentSort = 'losers';
+            else if (heading.includes('volatility')) currentSort = 'volatility';
+            else if (heading.includes('turnover') || heading.includes('trades')) currentSort = 'trades';
+            else currentSort = 'default'; // Reset for 'New' or others
+
+            renderTable();
+            document.querySelector('.market-table-card').scrollIntoView({behavior: 'smooth', block: 'start'});
+        });
+    });
 }
 
 function setupModal() {
@@ -420,6 +439,23 @@ function renderTable() {
             tbody.innerHTML = `<div style="padding:4rem; text-align:center; color:#94A3B8; grid-column:1/-1;">No results found for "${searchQuery}".</div>`;
             return;
         }
+    }
+
+    // Apply sorting based on spotlight "More" clicks
+    if (currentSort === 'gainers') {
+        symbolsToRender.sort((a, b) => parseFloat(marketData[b]?.priceChangePercent || 0) - parseFloat(marketData[a]?.priceChangePercent || 0));
+    } else if (currentSort === 'losers') {
+        symbolsToRender.sort((a, b) => parseFloat(marketData[a]?.priceChangePercent || 0) - parseFloat(marketData[b]?.priceChangePercent || 0));
+    } else if (currentSort === 'volume') {
+        symbolsToRender.sort((a, b) => parseFloat(marketData[b]?.quoteVolume || 0) - parseFloat(marketData[a]?.quoteVolume || 0));
+    } else if (currentSort === 'hot' || currentSort === 'trades') {
+        symbolsToRender.sort((a, b) => parseInt(marketData[b]?.count || 0) - parseInt(marketData[a]?.count || 0));
+    } else if (currentSort === 'volatility') {
+        symbolsToRender.sort((a, b) => {
+            const vA = (parseFloat(marketData[a]?.highPrice) - parseFloat(marketData[a]?.lowPrice)) / (parseFloat(marketData[a]?.lowPrice) || 1);
+            const vB = (parseFloat(marketData[b]?.highPrice) - parseFloat(marketData[b]?.lowPrice)) / (parseFloat(marketData[b]?.lowPrice) || 1);
+            return (vB || 0) - (vA || 0);
+        });
     }
 
     symbolsToRender.forEach((symbol) => {
