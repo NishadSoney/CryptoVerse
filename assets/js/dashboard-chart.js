@@ -180,7 +180,7 @@ async function initMarketChart() {
 }
 
 async function updateAllTickers() {
-  const coins = ['BTC', 'ETH', 'SOL'];
+  const coins = ['BTC', 'ETH', 'SOL', 'XRP', 'BNB'];
   
   for (const coin of coins) {
     try {

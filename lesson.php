@@ -14,7 +14,7 @@ require_once __DIR__ . '/includes/auth.php';
 use CryptoVerse\Config\Database;
 
 if (!AuthService::check()) {
-    header('Location: /login.php');
+    header('Location: login.php');
     exit;
 }
 
@@ -28,7 +28,7 @@ $stmt->execute([':id' => $lessonId]);
 $lesson = $stmt->fetch();
 
 if (!$lesson) {
-    header('Location: /learn.php');
+    header('Location: learn.php');
     exit;
 }
 
@@ -318,7 +318,7 @@ $userNote = '';
         formData.append('note_text', text);
 
         try {
-          const res = await fetch('/api/notes.php', { method: 'POST', body: formData });
+          const res = await fetch('api/notes.php', { method: 'POST', body: formData });
           const data = await res.json();
           if (res.ok && data.success) {
             const status = document.getElementById('note-saved-status');
@@ -352,7 +352,7 @@ $userNote = '';
         formData.append('note_text', text);
 
         try {
-          const res = await fetch('/api/notes.php', { method: 'POST', body: formData });
+          const res = await fetch('api/notes.php', { method: 'POST', body: formData });
           if (res.ok) {
             const status = document.getElementById('note-saved-status');
             status.style.display = 'inline';
@@ -443,14 +443,14 @@ $userNote = '';
       formData.append('lesson_id', lessonId);
 
       try {
-        const res = await fetch('/api/quiz_submit.php', { method: 'POST', body: formData });
+        const res = await fetch('api/quiz_submit.php', { method: 'POST', body: formData });
         const data = await res.json();
         const resultDiv = document.getElementById('quiz-result');
 
         if (data.success) {
           resultDiv.innerHTML = `<span style="color: #5de3ca;">✓ Passed! Score: ${data.score}% (+${data.xp_awarded} XP)</span>`;
           setTimeout(() => {
-            window.location.href = '/learn.php';
+            window.location.href = 'learn.php';
           }, 1800);
         } else {
           resultDiv.innerHTML = `<span style="color: #EF4444;">Score: ${data.score}%. Need 70% to pass. Try again!</span>`;

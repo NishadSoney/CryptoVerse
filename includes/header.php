@@ -63,7 +63,7 @@ if (!isset($active_page)) {
 <main class="<?= $active_page === 'learn' ? 'lessons-shell' : 'dashboard-shell' ?>">
   <!-- Top Navigation -->
   <header class="dashboard-nav">
-    <a href="index.php" class="brand"><span class="brand-mark">C</span><span class="logo-text"><span class="large-letter">C</span>RYPTO<span class="large-letter">V</span>ERSE</span></a>
+    <a href="dashboard.php" class="brand"><span class="brand-mark">C</span><span class="logo-text"><span class="large-letter">C</span>RYPTO<span class="large-letter">V</span>ERSE</span></a>
     <nav class="centered-nav">
       <a class="<?= $active_page === 'home' ? 'active' : '' ?>" href="dashboard.php">Home</a>
       <a class="<?= $active_page === 'learn' ? 'active' : '' ?>" href="learn.php">Learn</a>

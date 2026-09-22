@@ -1,11 +1,11 @@
 
 <?php
+declare(strict_types=1);
 /**
  * CryptoVerse - Dashboard
  * Location: dashboard.php
+ * blank
  */
-//l;
-declare(strict_types=1);
 
 require_once __DIR__ . '/config/config.php';
 $active_page = 'home';
@@ -125,6 +125,28 @@ if ($xp > 0) {
             <div class="coin-price">
               <strong id="price-SOL">--</strong>
               <span class="change negative" id="change-SOL">--</span>
+            </div>
+          </div>
+          <div class="coin-row" data-coin="XRP">
+            <div class="coin-icon" style="background: #23292F; color: #fff;">X</div>
+            <div class="coin-info">
+              <strong>XRP</strong>
+              <span>Ripple</span>
+            </div>
+            <div class="coin-price">
+              <strong id="price-XRP">--</strong>
+              <span class="change positive" id="change-XRP">--</span>
+            </div>
+          </div>
+          <div class="coin-row" data-coin="BNB">
+            <div class="coin-icon" style="background: #F3BA2F; color: #111;">B</div>
+            <div class="coin-info">
+              <strong>BNB</strong>
+              <span>Binance</span>
+            </div>
+            <div class="coin-price">
+              <strong id="price-BNB">--</strong>
+              <span class="change positive" id="change-BNB">--</span>
             </div>
           </div>
         </div>

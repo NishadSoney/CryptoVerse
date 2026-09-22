@@ -191,7 +191,7 @@ class AuthService {
      */
     public static function requireAuth(): void {
         if (!self::check()) {
-            header('Location: /login.php?redirect=' . urlencode($_SERVER['REQUEST_URI'] ?? '/dashboard.php'));
+            header('Location: ' . APP_URL . '/login.php?redirect=' . urlencode($_SERVER['REQUEST_URI'] ?? '/dashboard.php'));
             exit;
         }
     }
@@ -201,7 +201,7 @@ class AuthService {
      */
     public static function requireGuest(): void {
         if (self::check()) {
-            header('Location: /dashboard.php');
+            header('Location: ' . APP_URL . '/dashboard.php');
             exit;
         }
     }
