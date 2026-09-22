@@ -5,6 +5,7 @@ declare(strict_types=1);
  * CryptoVerse - Dashboard
  * Location: dashboard.php
  * blank
+ * blank
  */
 
 require_once __DIR__ . '/config/config.php';
