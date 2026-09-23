@@ -15,10 +15,8 @@ require_once __DIR__ . '/includes/header.php';
      but we need to ensure the styles from .markets-shell are applied. 
      We'll just wrap the content below in a div that acts as the shell's content area -->
 
+<!-- Styles are applied by header.php wrapper -->
 <link rel="stylesheet" href="assets/css/markets.css">
-<div class="markets-shell">
-    <div class="markets-content">
-      
       <!-- HERO -->
       <div class="markets-hero">
         <div>
@@ -223,10 +221,6 @@ require_once __DIR__ . '/includes/header.php';
         <i data-lucide="wallet" style="width:16px; height:16px; color:#a294ff; margin-left:auto;"></i>
         <span>Educational only</span>
       </div>
-      
-    </div>
-</div>
-
 <!-- STUDY MODAL -->
 <div id="study-modal" class="study-modal-overlay" style="display:none;">
     <div class="study-modal-content">

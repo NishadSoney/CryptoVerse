@@ -1,6 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    (function() {
+      var currentTheme = localStorage.getItem('cryptoverse_theme');
+      if (!currentTheme) currentTheme = 'light'; // Default to light mode
+      if (currentTheme === 'light') {
+        document.documentElement.classList.add('light-theme');
+      }
+    })();
+  </script>
+  <style>
+    /* Global Smooth Theme Transitions */
+    html {
+      transition: filter 0.5s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    /* CSS Filter Inversion for Light Theme */
+    html.light-theme {
+      filter: invert(1) hue-rotate(180deg);
+      background: #ffffff;
+    }
+    
+    /* Revert inversion for graphics and charts to keep them normal */
+    html.light-theme img,
+    html.light-theme .tv-lightweight-charts,
+    html.light-theme .profile-photo,
+    html.light-theme .coin-icon,
+    html.light-theme .path-visual,
+    html.light-theme .scene-core {
+      filter: invert(1) hue-rotate(180deg);
+    }
+    
+    /* Revert inversion transitions */
+    img, .tv-lightweight-charts, .profile-photo, .coin-icon, .path-visual, .scene-core {
+      transition: filter 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Page Load Animation */
+    @keyframes smoothPageLoad {
+      0% { opacity: 0; transform: translateY(12px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    body {
+      animation: smoothPageLoad 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    /* Universal Button & Interaction Transitions */
+    a, button, input, .nav-item, .theme-option, .setting-row {
+      transition: all 0.2s ease-in-out;
+    }
+    
+    /* Button Click "Squish" Effect */
+    button:active, a.button:active, .theme-option:active {
+      transform: scale(0.96) !important;
+    }
+    
+    /* Card Hover Lift Effects */
+    .profile-card, .market-table-card, .spotlight-card, .feature-card, .portfolio-card {
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    .profile-card:hover, .market-table-card:hover, .spotlight-card:hover, .feature-card:hover, .portfolio-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(141, 122, 255, 0.4);
+      box-shadow: 0 12px 32px rgba(141, 122, 255, 0.08);
+    }
+    
+    /* Inputs Focus Polish */
+    input:focus {
+      background: rgba(141, 122, 255, 0.05) !important;
+    }
+  </style>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CryptoVerse - Understand Crypto. Practice without the risk.</title>

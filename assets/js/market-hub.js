@@ -71,6 +71,16 @@ async function initMarketHub() {
         
         const filteredTickers = allTickers.filter(t => TARGET_SYMBOLS.includes(t.symbol));
         
+        const approxSupplies = {
+            'BTCUSDT': 19700000,
+            'ETHUSDT': 120000000,
+            'BNBUSDT': 149000000,
+            'SOLUSDT': 450000000,
+            'XRPUSDT': 55000000000,
+            'ADAUSDT': 35000000000,
+            'DOGEUSDT': 144000000000
+        };
+        
         let totalVolume = 0;
         let totalCapApprox = 0;
         
@@ -78,7 +88,12 @@ async function initMarketHub() {
             marketData[t.symbol] = t;
             totalVolume += parseFloat(t.quoteVolume);
             const price = parseFloat(t.lastPrice);
-            totalCapApprox += (parseFloat(t.quoteVolume) * 10) * price;
+            
+            if (approxSupplies[t.symbol]) {
+                totalCapApprox += approxSupplies[t.symbol] * price;
+            } else {
+                totalCapApprox += parseFloat(t.quoteVolume) * 15; // Rough estimate for others
+            }
         });
 
         document.getElementById('hero-total-cap').textContent = '$' + (totalCapApprox / 1e9).toFixed(2) + 'B';

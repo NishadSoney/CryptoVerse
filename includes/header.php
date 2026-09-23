@@ -50,6 +50,76 @@ if (!isset($active_page)) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    (function() {
+      var currentTheme = localStorage.getItem('cryptoverse_theme');
+      if (!currentTheme) currentTheme = 'light'; // Default to light mode
+      if (currentTheme === 'light') {
+        document.documentElement.classList.add('light-theme');
+      }
+    })();
+  </script>
+  <style>
+    /* Global Smooth Theme Transitions */
+    html {
+      transition: filter 0.5s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    /* CSS Filter Inversion for Light Theme */
+    html.light-theme {
+      filter: invert(1) hue-rotate(180deg);
+      background: #ffffff; /* Ensures inversion has a solid base */
+    }
+    
+    /* Revert inversion for graphics and charts to keep them normal */
+    html.light-theme img,
+    html.light-theme .tv-lightweight-charts,
+    html.light-theme .profile-photo,
+    html.light-theme .coin-icon,
+    html.light-theme .path-visual,
+    html.light-theme .scene-core {
+      filter: invert(1) hue-rotate(180deg);
+    }
+    
+    /* Revert inversion transitions */
+    img, .tv-lightweight-charts, .profile-photo, .coin-icon, .path-visual, .scene-core {
+      transition: filter 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Page Load Animation */
+    @keyframes smoothPageLoad {
+      0% { opacity: 0; transform: translateY(12px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    body {
+      animation: smoothPageLoad 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    /* Universal Button & Interaction Transitions */
+    a, button, input, .nav-item, .theme-option, .setting-row {
+      transition: all 0.2s ease-in-out;
+    }
+    
+    /* Button Click "Squish" Effect */
+    button:active, a.button:active, .theme-option:active {
+      transform: scale(0.96) !important;
+    }
+    
+    /* Card Hover Lift Effects */
+    .profile-card, .market-table-card, .spotlight-card, .feature-card, .portfolio-card {
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    .profile-card:hover, .market-table-card:hover, .spotlight-card:hover, .feature-card:hover, .portfolio-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(141, 122, 255, 0.4);
+      box-shadow: 0 12px 32px rgba(141, 122, 255, 0.08);
+    }
+    
+    /* Inputs Focus Polish */
+    input:focus {
+      background: rgba(141, 122, 255, 0.05) !important;
+    }
+  </style>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><?= ucfirst($active_page) ?> &mdash; CryptoVerse</title>
@@ -60,7 +130,7 @@ if (!isset($active_page)) {
 </head>
 <body style="<?= ($active_page !== 'home') ? 'background-color: #080914; color: #F8FAFC; margin: 0; font-family: \'Plus Jakarta Sans\', sans-serif;' : '' ?>">
 
-<main class="<?= $active_page === 'learn' ? 'lessons-shell' : 'dashboard-shell' ?>">
+<main class="<?= $active_page === 'learn' ? 'lessons-shell' : ($active_page === 'markets' ? 'markets-shell' : ($active_page === 'trade' ? 'trade-shell' : 'dashboard-shell')) ?>">
   <!-- Top Navigation -->
   <header class="dashboard-nav">
     <a href="dashboard.php" class="brand"><span class="brand-mark">C</span><span class="logo-text"><span class="large-letter">C</span>RYPTO<span class="large-letter">V</span>ERSE</span></a>
@@ -70,15 +140,77 @@ if (!isset($active_page)) {
       <a class="<?= $active_page === 'markets' ? 'active' : '' ?>" href="markets.php">Markets</a>
       <a class="<?= $active_page === 'trade' ? 'active' : '' ?>" href="practice.php">Trade</a>
     </nav>
-    <div class="dashboard-user">
+    <div class="dashboard-user" id="user-menu-trigger" style="position: relative; cursor: pointer;">
       <span class="avatar"><?= htmlspecialchars($avatar_initial) ?></span>
       <span><?= htmlspecialchars($name) ?></span>
       <span class="user-caret"><i data-lucide="chevron-down" style="width: 14px; height: 14px;"></i></span>
+      
+      <!-- Dropdown Menu -->
+      <div id="user-dropdown-menu" style="display: none; position: absolute; top: 100%; right: 0; margin-top: 0.5rem; background: #131422; border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; width: 160px; z-index: 1000; box-shadow: 0 4px 12px rgba(0,0,0,0.5); padding: 0.5rem 0; flex-direction: column;">
+        <a href="profile.php" style="display: flex; align-items: center; gap: 8px; padding: 0.5rem 1rem; color: #fff; text-decoration: none; font-size: 0.875rem;">
+          <i data-lucide="user-round" style="width: 15px; height: 15px;"></i> Your Profile
+        </a>
+        <div style="height: 1px; background: rgba(255,255,255,0.1); margin: 0.25rem 0;"></div>
+        <a href="#" onclick="showLogoutModal(event)" style="display: flex; align-items: center; gap: 8px; padding: 0.5rem 1rem; color: #ef7f9b; text-decoration: none; font-size: 0.875rem;">
+          <i data-lucide="log-out" style="width: 15px; height: 15px;"></i> Sign Out
+        </a>
+      </div>
     </div>
   </header>
 
+  <!-- Logout Confirmation Modal -->
+  <div id="logout-modal-backdrop" style="display: none; position: fixed; inset: 0; background: rgba(8, 9, 20, 0.8); z-index: 9999; justify-content: center; align-items: center;">
+    <div style="background: #131422; border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 2rem; width: 100%; max-width: 400px; text-align: center; box-shadow: 0 8px 32px rgba(0,0,0,0.5);">
+      <div style="width: 48px; height: 48px; background: rgba(239, 127, 155, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: #ef7f9b;">
+        <i data-lucide="log-out" style="width: 24px; height: 24px;"></i>
+      </div>
+      <h2 style="font-size: 1.25rem; font-weight: 700; margin: 0 0 0.5rem;">Sign out of CryptoVerse?</h2>
+      <p style="color: #77758a; margin: 0 0 1.5rem; font-size: 0.875rem; line-height: 1.5;">You will be safely logged out of your session. Your paper trading progress and lessons will be saved.</p>
+      <div style="display: flex; gap: 1rem; justify-content: center;">
+        <button onclick="hideLogoutModal()" style="padding: 0.625rem 1.25rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: transparent; color: #fff; font-weight: 600; cursor: pointer; flex: 1; transition: background 0.2s;">Cancel</button>
+        <button onclick="window.location.href='logout.php'" style="padding: 0.625rem 1.25rem; border-radius: 8px; border: none; background: #ef7f9b; color: #191525; font-weight: 700; cursor: pointer; flex: 1; transition: opacity 0.2s;">Sign Out</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Dropdown Toggle Logic
+    const trigger = document.getElementById('user-menu-trigger');
+    const menu = document.getElementById('user-dropdown-menu');
+
+    trigger.addEventListener('click', function(e) {
+      if (e.target.closest('#user-dropdown-menu')) return;
+      menu.style.display = menu.style.display === 'none' ? 'flex' : 'none';
+    });
+
+    document.addEventListener('click', function(e) {
+      if (!trigger.contains(e.target)) {
+        menu.style.display = 'none';
+      }
+    });
+
+    // Logout Modal Logic
+    const logoutBackdrop = document.getElementById('logout-modal-backdrop');
+
+    function showLogoutModal(e) {
+      e.preventDefault();
+      menu.style.display = 'none';
+      logoutBackdrop.style.display = 'flex';
+    }
+
+    function hideLogoutModal() {
+      logoutBackdrop.style.display = 'none';
+    }
+
+    logoutBackdrop.addEventListener('click', function(e) {
+      if (e.target === logoutBackdrop) {
+        hideLogoutModal();
+      }
+    });
+  </script>
+
   <!-- Dashboard Content Container -->
-  <div class="dashboard-content">
+  <div class="<?= $active_page === 'markets' ? 'markets-content' : ($active_page === 'trade' ? 'trade-content' : 'dashboard-content') ?>">
     
     <!-- Unified Hero Panel -->
     <?php if ($active_page === 'home'): ?>
