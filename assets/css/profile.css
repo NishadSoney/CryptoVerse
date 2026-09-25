@@ -29,14 +29,6 @@
 .setting-row strong,.setting-row small{display:block}
 .setting-row strong{font-size:11px;margin-bottom:4px}
 .card-lede{line-height:1.6}
-.theme-picker{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.theme-option{display:grid;gap:5px;padding:10px;text-align:left;color:var(--ink);background:rgba(255,255,255,.025);border:1px solid var(--line);border-radius:6px;cursor:pointer;}
-.theme-option.active{border-color:rgba(141,122,255,.6);background:rgba(141,122,255,.1)}
-.theme-option strong{font-size:10px}
-.theme-option small{color:#777489;font-size:9px}
-.theme-preview{display:flex;align-items:center;justify-content:center;height:54px;border-radius:4px;margin-bottom:5px}
-.dark-preview{background:#17152b;color:#a99eff}
-.light-preview{background:#eeeaff;color:#6e5bd1}
 .privacy-note{display:flex;gap:9px;border-top:1px solid var(--line);margin-top:20px;padding-top:17px;color:var(--mint)}
 .privacy-note span{display:flex;flex-direction:column;gap:5px}
 .privacy-note strong{color:#b8b3c9;font-size:10px}
@@ -88,7 +80,7 @@
   .profile-grid{grid-template-columns:1fr}
   .account-card{grid-row:auto}
   .profile-card{padding:20px}
-  .form-grid,.theme-picker{grid-template-columns:1fr}
+  .form-grid{grid-template-columns:1fr}
   .activity-row time{display:none}
   .profile-footer{flex-direction:column;gap:10px}
   .profile-nav{padding:0 20px}

@@ -1,41 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script>
-    (function() {
-      var currentTheme = localStorage.getItem('cryptoverse_theme');
-      if (!currentTheme) currentTheme = 'light'; // Default to light mode
-      if (currentTheme === 'light') {
-        document.documentElement.classList.add('light-theme');
-      }
-    })();
-  </script>
   <style>
-    /* Global Smooth Theme Transitions */
-    html {
-      transition: filter 0.5s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    
-    /* CSS Filter Inversion for Light Theme */
-    html.light-theme {
-      filter: invert(1) hue-rotate(180deg);
-      background: #ffffff;
-    }
-    
-    /* Revert inversion for graphics and charts to keep them normal */
-    html.light-theme img,
-    html.light-theme .tv-lightweight-charts,
-    html.light-theme .profile-photo,
-    html.light-theme .coin-icon,
-    html.light-theme .path-visual,
-    html.light-theme .scene-core {
-      filter: invert(1) hue-rotate(180deg);
-    }
-    
-    /* Revert inversion transitions */
-    img, .tv-lightweight-charts, .profile-photo, .coin-icon, .path-visual, .scene-core {
-      transition: filter 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    }
 
     /* Page Load Animation */
     @keyframes smoothPageLoad {
@@ -47,12 +13,12 @@
     }
 
     /* Universal Button & Interaction Transitions */
-    a, button, input, .nav-item, .theme-option, .setting-row {
+    a, button, input, .nav-item, .setting-row {
       transition: all 0.2s ease-in-out;
     }
     
     /* Button Click "Squish" Effect */
-    button:active, a.button:active, .theme-option:active {
+    button:active, a.button:active {
       transform: scale(0.96) !important;
     }
     

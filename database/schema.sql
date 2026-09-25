@@ -1,6 +1,6 @@
 -- ============================================================
--- CryptoVerse — Database Schema & Seed Data
--- Target Database: MySQL 8.0+ (WAMP Server / phpMyAdmin Compatible)
+-- CryptoVerse — Database Schema & Seed Data 
+-- Target Database: MySQL 8.0+
 -- Engine: InnoDB | Charset: utf8mb4 | Collation: utf8mb4_unicode_ci
 -- ============================================================
 

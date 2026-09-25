@@ -156,7 +156,7 @@ require_once __DIR__ . '/includes/header.php';
         <span>24h low <b id="stat-low">$0.00</b></span>
         <span>24h volume <b id="stat-vol">$0.00</b></span>
       </div>
-      <button class="icon-button" aria-label="Reset Sandbox" onclick="resetSandbox()" title="Reset Sandbox to $100k">
+      <button class="icon-button" aria-label="Refresh Graph" onclick="refreshGraph()" title="Refresh Graph">
         <i data-lucide="refresh-cw" style="width: 16px; height: 16px;"></i>
       </button>
     </div>
@@ -905,6 +905,15 @@ require_once __DIR__ . '/includes/header.php';
     } catch (e) {
       alert('Reset failed.');
     }
+  }
+
+  function refreshGraph() {
+      const sym = document.getElementById('trade-asset').value;
+      if (currentTab === 'chart') {
+          fetchKlineData(sym, currentInterval);
+      } else {
+          fetchDepthData(sym);
+      }
   }
 
   // Initialize

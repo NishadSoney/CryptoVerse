@@ -259,35 +259,6 @@ $tones = ['orange' => '#f7931a', 'blue' => '#627eea', 'green' => '#14d99a', 'pin
       </div>
     </section>
 
-    <section class="profile-card theme-card">
-      <div class="card-heading">
-        <div>
-          <span class="section-kicker">APPEARANCE</span>
-          <h2>Make it yours</h2>
-        </div>
-        <i data-lucide="sun" style="width: 18px; height: 18px; color: #9184ed;"></i>
-      </div>
-      <p class="card-lede">Choose the visual atmosphere that feels right for your learning journey.</p>
-      <div class="theme-picker">
-        <button class="theme-option" id="theme-btn-dark" onclick="setTheme('dark')">
-          <span class="theme-preview dark-preview"><i data-lucide="moon" style="width: 18px; height: 18px;"></i></span>
-          <strong>Dark mode</strong>
-          <small>Easy on the eyes</small>
-        </button>
-        <button class="theme-option" id="theme-btn-light" onclick="setTheme('light')">
-          <span class="theme-preview light-preview"><i data-lucide="sun" style="width: 18px; height: 18px;"></i></span>
-          <strong>Light mode</strong>
-          <small>Bright and focused</small>
-        </button>
-      </div>
-      <div class="privacy-note">
-        <i data-lucide="lock-keyhole" style="width: 15px; height: 15px;"></i>
-        <span>
-          <strong>Your data stays yours.</strong>
-          <small>CryptoVerse is a paper-trading simulation. No real funds are connected.</small>
-        </span>
-      </div>
-    </section>
 
     <section class="profile-card funds-card">
       <div class="card-heading">
@@ -474,30 +445,7 @@ $tones = ['orange' => '#f7931a', 'blue' => '#627eea', 'green' => '#14d99a', 'pin
         emailInput.addEventListener('input', checkChanges);
     }
     
-    // Theme Switcher Logic
-    function setTheme(mode) {
-        localStorage.setItem('cryptoverse_theme', mode);
-        
-        const btnDark = document.getElementById('theme-btn-dark');
-        const btnLight = document.getElementById('theme-btn-light');
-        
-        if (mode === 'light') {
-            document.documentElement.classList.add('light-theme');
-            if(btnLight) btnLight.classList.add('active');
-            if(btnDark) btnDark.classList.remove('active');
-        } else {
-            document.documentElement.classList.remove('light-theme');
-            if(btnDark) btnDark.classList.add('active');
-            if(btnLight) btnLight.classList.remove('active');
-        }
-    }
-    
-    // Set initial UI state for theme
-    (function() {
-        var currentTheme = localStorage.getItem('cryptoverse_theme');
-        if (!currentTheme) currentTheme = 'light';
-        setTheme(currentTheme);
-    })();
+
     
     function promptAddFunds() {
         const amount = prompt("How much demo money would you like to add to your paper wallet? (e.g. 10000)");
