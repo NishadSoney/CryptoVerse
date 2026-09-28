@@ -6,8 +6,8 @@ a { color:inherit; text-decoration:none; }
 button { font:inherit; cursor:pointer; }
 .site-shell { overflow-x:hidden; background:radial-gradient(circle at 70% 6%,rgba(72,62,164,.16),transparent 30rem),var(--bg); }
 .top-nav { align-items:center; display:flex; height:78px; justify-content:space-between; margin:auto; max-width:1500px; padding:0 32px; position:absolute; inset:0 0 auto; z-index:5; width:100%; }
-.brand { align-items:center; display:flex; font-size: 13px; font-weight:700; gap:10px; letter-spacing:.15em; }
-.brand-mark { align-items:center; background:linear-gradient(135deg,#a28fff,#6150d5); border-radius:8px; display:inline-flex; font-family:Georgia,serif; font-size: 19px; font-style:italic; height:27px; justify-content:center; letter-spacing:0; width:27px; }
+.brand { align-items:center; display:flex; font-size: 12px; font-weight:700; gap:10px; letter-spacing:.15em; }
+.brand-mark { align-items:center; background:linear-gradient(135deg,#a28fff,#6150d5); border-radius:8px; display:inline-flex; font-family:Georgia,serif; font-size: 18px; font-style:italic; height:27px; justify-content:center; letter-spacing:0; width:27px; }
 .nav-links { display:flex; gap:30px; margin-left:100px; color:#aaa9ba; font-size: 13px; }
 .nav-links a:hover,.nav-login:hover { color:white; }
 .nav-actions { align-items:center; display:flex; gap:24px; font-size: 13px; }
@@ -96,7 +96,7 @@ button { font:inherit; cursor:pointer; }
 .final-section h2 { font-size: clamp(47px, 6.3vw, 76px); }
 .final-section p { color:#9290a3; font-size: 14px; margin:20px 0 28px; }
 .site-footer { align-items:center; color:#69677b; display:flex; font-size: 11px; justify-content:space-between; margin:auto; max-width:1500px; padding:28px 32px; }
-.site-footer .brand { color:#dbd9e8; font-size: 11px; }
+.site-footer .brand { color:#dbd9e8; font-size: 10px; }
 @media(max-width:800px){
   .top-nav{padding:0 20px}
   .nav-links{display:none}
