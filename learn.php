@@ -16,7 +16,7 @@ use CryptoVerse\Config\Database;
 
 // Enforce student authentication
 if (!AuthService::check()) {
-    header('Location: /login.php');
+    header('Location: login.php');
     exit;
 }
 

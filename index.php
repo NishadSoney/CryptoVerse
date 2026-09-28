@@ -54,12 +54,7 @@
       <span class="brand-mark">C</span>
       <span class="logo-text"><span class="large-letter">C</span>RYPTO<span class="large-letter">V</span>ERSE</span>
     </a>
-    <div class="nav-links">
-      <a href="index.php">Home</a>
-      <a href="learn.php">Learn</a>
-      <a href="markets.php">Markets</a>
-      <a href="practice.php">Trade</a>
-    </div>
+
     <div class="nav-actions">
       <a href="login.php" class="nav-login">Log in</a>
       <a href="signup.php" class="button button-small">Get started <i data-lucide="arrow-right" style="width: 15px; height: 15px;"></i></a>

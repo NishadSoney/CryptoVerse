@@ -14,7 +14,7 @@ require_once __DIR__ . '/includes/auth.php';
 use CryptoVerse\Config\Database;
 
 if (!AuthService::check()) {
-    header('Location: /login.php');
+    header('Location: login.php');
     exit;
 }
 

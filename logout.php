@@ -11,5 +11,5 @@ session_unset();
 session_destroy();
 
 // Redirect to the landing page
-header("Location: /index.php");
+header("Location: index.php");
 exit;
