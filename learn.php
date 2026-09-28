@@ -116,7 +116,18 @@ require_once __DIR__ . '/includes/header.php';
         </div>
         <div class="learning-progress">
           <div class="progress-orbit">
-            <strong><?= $completedCount ?></strong><span>/ <?= $totalLessons ?></span>
+            <?php 
+              $progressPercent = ($totalLessons > 0) ? ($completedCount / $totalLessons) : 0;
+              $dashArray = 2 * pi() * 28; // circumference for r=28
+              $dashOffset = $dashArray * (1 - $progressPercent);
+            ?>
+            <svg width="58" height="58" style="position: absolute; inset: 0; transform: rotate(-90deg);">
+              <circle cx="29" cy="29" r="28" stroke="rgba(141,122,255,.2)" stroke-width="1" fill="none" />
+              <circle cx="29" cy="29" r="28" stroke="#5de3ca" stroke-width="1.5" fill="none" stroke-dasharray="<?= $dashArray ?>" stroke-dashoffset="<?= $dashOffset ?>" stroke-linecap="round" />
+            </svg>
+            <div style="position: relative; display: flex; align-items: baseline; padding-top: 4px;">
+              <strong><?= $completedCount ?></strong><span>/<?= $totalLessons ?></span>
+            </div>
           </div>
           <div>
             <span class="section-kicker">LESSONS COMPLETE</span>
