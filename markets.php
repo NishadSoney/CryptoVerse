@@ -16,7 +16,7 @@ require_once __DIR__ . '/includes/header.php';
      We'll just wrap the content below in a div that acts as the shell's content area -->
 
 <!-- Styles are applied by header.php wrapper -->
-<link rel="stylesheet" href="assets/css/markets.css">
+<link rel="stylesheet" href="assets/css/markets.css?v=<?= time() ?>">
       <!-- HERO -->
       <div class="markets-hero">
         <div>

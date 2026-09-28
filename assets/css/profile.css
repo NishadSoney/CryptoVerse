@@ -1,7 +1,7 @@
 .profile-shell{min-height:100vh;background:radial-gradient(circle at 75% 0,rgba(74,62,174,.2),transparent 34rem),var(--bg)}
 .profile-nav{position:relative;border-bottom:1px solid var(--line)}
 .profile-nav-user{display:flex;align-items:center;gap:9px;color:#aaa8ba;font-size:11px}
-.profile-content{max-width:1180px;margin:auto;padding:34px 32px 55px}
+.profile-content{max-width:1500px;margin:auto;padding:34px 32px 55px}
 .profile-heading{display:flex;align-items:end;justify-content:space-between;padding:52px 0 38px}
 .profile-heading h1{font-size:clamp(44px,5vw,70px);font-weight:500;letter-spacing:-.08em;line-height:1;margin:15px 0}
 .profile-heading h1 em{color:#9b8dff;font-family:var(--serif);font-style:italic;font-weight:400}

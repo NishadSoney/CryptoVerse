@@ -27,7 +27,7 @@
 
 .trade-content {
   margin: auto;
-  max-width: 1240px;
+  max-width:1500px;
   padding: 50px 32px 60px;
 }
 
@@ -93,7 +93,7 @@
 .trade-layout {
   display: grid;
   gap: 16px;
-  grid-template-columns: minmax(0, 1fr) 290px;
+  grid-template-columns: minmax(0, 1fr) 340px;
 }
 
 .trade-main,
