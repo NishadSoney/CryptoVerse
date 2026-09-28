@@ -116,10 +116,10 @@ require_once __DIR__ . '/includes/header.php';
   </div>
   <div class="paper-balance">
     <i data-lucide="wallet" style="width: 16px; height: 16px;"></i>
-    <span>Paper balance</span>
-    <strong id="head-balance-val">$<?= number_format($portfolioTotal, 2) ?></strong>
-    <small id="head-pnl-val" style="color: <?= $pnlDollar >= 0 ? 'var(--mint)' : '#ef7f9b' ?>;">
-      <?= $pnlDollar >= 0 ? '+' : '' ?>$<?= number_format($pnlDollar, 2) ?> all-time
+    <span>Available cash</span>
+    <strong id="head-balance-val">$<?= number_format($virtualCash, 2) ?></strong>
+    <small style="color: #838091;">
+      Total Value: <span id="head-pnl-val" style="color: <?= $pnlDollar >= 0 ? 'var(--mint)' : '#ef7f9b' ?>;">$<?= number_format($portfolioTotal, 2) ?></span>
     </small>
   </div>
 </div>
@@ -737,7 +737,7 @@ require_once __DIR__ . '/includes/header.php';
       const pnlPercent = (pnlDollar / 100000.00) * 100.0;
       
       document.getElementById('est-total-val').textContent = '$' + total.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
-      document.getElementById('head-balance-val').textContent = '$' + total.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
+      document.getElementById('head-balance-val').textContent = '$' + availableCash.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
       
       const pnlPrefix = pnlDollar >= 0 ? '+' : '';
       const pnlColor = pnlDollar >= 0 ? 'market-positive' : 'market-negative';
@@ -749,7 +749,7 @@ require_once __DIR__ . '/includes/header.php';
       
       const headPnl = document.getElementById('head-pnl-val');
       headPnl.style.color = headColor;
-      headPnl.textContent = `${pnlPrefix}$${pnlDollar.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})} all-time`;
+      headPnl.textContent = '$' + total.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
       
       const totPnl = document.getElementById('total-pnl-val');
       totPnl.className = pnlDollar >= 0 ? 'market-positive' : '';
