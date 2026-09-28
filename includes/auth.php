@@ -137,12 +137,7 @@ class AuthService {
                 ':cash' => INITIAL_VIRTUAL_BALANCE
             ]);
 
-            // 4. Initialize first lesson as AVAILABLE in user_progress
-            $progressStmt = $db->prepare("
-                INSERT INTO user_progress (user_id, lesson_id, status)
-                VALUES (:user_id, 1, 'AVAILABLE')
-            ");
-            $progressStmt->execute([':user_id' => $userId]);
+            // (user_progress initialization removed - dynamic logic used instead)
 
             $db->commit();
 

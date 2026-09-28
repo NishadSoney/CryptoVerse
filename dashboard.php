@@ -176,9 +176,12 @@ if ($xp > 0) {
 
       <?php
       // Fetch completed lessons for summary
-      $completedStmt = $db->prepare("SELECT l.title, l.key_takeaway FROM user_progress up JOIN lessons l ON up.lesson_id = l.id WHERE up.user_id = :id AND up.status = 'COMPLETED' ORDER BY up.completed_at DESC LIMIT 5");
+      $completedStmt = $db->prepare("SELECT l.title, l.summary, l.key_takeaway FROM user_lesson_progress up JOIN lessons l ON up.lesson_id = l.id WHERE up.user_id = :id AND up.completed = 1 ORDER BY up.completed_at DESC LIMIT 5");
       $completedStmt->execute([':id' => $_SESSION['user_id']]);
       $completedLessons = $completedStmt->fetchAll();
+      
+      $termStmt = $db->query("SELECT term, simple_definition FROM glossary_terms ORDER BY RAND() LIMIT 1");
+      $randomTerm = $termStmt->fetch();
       ?>
       <div class="lessons-panel">
         <div class="panel-heading">
@@ -196,15 +199,52 @@ if ($xp > 0) {
               </div>
             </div>
           <?php else: ?>
-            <?php foreach ($completedLessons as $cl): ?>
-            <div class="lesson-row" style="align-items: start; gap: 14px;">
-              <span class="lesson-number" style="margin-top: 2px;"><i data-lucide="check" style="width: 14px; height: 14px; color: var(--mint);"></i></span>
-              <div class="lesson-row-copy">
-                <strong><?= htmlspecialchars($cl['title']) ?></strong>
-                <span style="line-height: 1.5; margin-top: 4px;"><?= htmlspecialchars($cl['key_takeaway']) ?></span>
+            <?php $lastLesson = $completedLessons[0]; ?>
+            <div style="background: rgba(93, 227, 202, 0.05); border: 1px solid rgba(93, 227, 202, 0.1); border-radius: 12px; padding: 20px; margin-bottom: 15px;">
+              <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                <i data-lucide="award" style="width: 16px; height: 16px; color: var(--mint);"></i>
+                <span class="section-kicker" style="margin: 0; color: var(--mint);">LATEST LESSON COMPLETED</span>
+              </div>
+              <h3 style="font-size: 18px; margin: 0 0 10px 0; color: #fff;"><?= htmlspecialchars($lastLesson['title']) ?></h3>
+              <p style="font-size: 13px; color: #94A3B8; line-height: 1.5; margin: 0 0 15px 0;">
+                <?= htmlspecialchars($lastLesson['summary']) ?>
+              </p>
+              <div style="background: rgba(0,0,0,0.2); padding: 12px; border-radius: 8px; border-left: 3px solid var(--mint);">
+                <strong style="display: block; font-size: 11px; color: #777489; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px;">Key Takeaway</strong>
+                <span style="font-size: 13px; color: #e2e8f0; line-height: 1.4;"><?= htmlspecialchars($lastLesson['key_takeaway']) ?></span>
               </div>
             </div>
-            <?php endforeach; ?>
+
+            <?php if (count($completedLessons) > 1): ?>
+              <div style="font-size: 11px; font-weight: 700; color: #777489; letter-spacing: 1px; text-transform: uppercase; margin: 20px 0 10px 0;">Previous Lessons</div>
+              <?php for($i = 1; $i < count($completedLessons); $i++): $cl = $completedLessons[$i]; ?>
+              <div class="lesson-row" style="align-items: start; gap: 14px;">
+                <span class="lesson-number" style="margin-top: 2px;"><i data-lucide="check" style="width: 14px; height: 14px; color: var(--mint);"></i></span>
+                <div class="lesson-row-copy">
+                  <strong><?= htmlspecialchars($cl['title']) ?></strong>
+                  <span style="line-height: 1.5; margin-top: 4px;"><?= htmlspecialchars($cl['key_takeaway']) ?></span>
+                </div>
+              </div>
+              <?php endfor; ?>
+            <?php endif; ?>
+          <?php endif; ?>
+          
+          <?php if (!empty($randomTerm)): ?>
+          <div style="margin-top: 25px; padding: 18px; border-radius: 12px; background: linear-gradient(135deg, rgba(141, 122, 255, 0.08) 0%, rgba(19, 20, 34, 0) 100%); border: 1px solid rgba(141, 122, 255, 0.2); position: relative; overflow: hidden;">
+            <div style="position: absolute; right: -10px; top: -10px; opacity: 0.05; transform: rotate(15deg);">
+               <i data-lucide="book-open" style="width: 80px; height: 80px;"></i>
+            </div>
+            <div style="position: relative; z-index: 1;">
+              <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                <i data-lucide="lightbulb" style="width: 14px; height: 14px; color: #8d7aff;"></i>
+                <span style="font-size: 10px; font-weight: 700; letter-spacing: 1px; color: #8d7aff; text-transform: uppercase;">Term of the Day</span>
+              </div>
+              <h4 style="margin: 0 0 6px 0; font-size: 15px; color: #fff;"><?= htmlspecialchars($randomTerm['term']) ?></h4>
+              <p style="margin: 0; font-size: 12px; color: #94A3B8; line-height: 1.5;">
+                <?= htmlspecialchars($randomTerm['simple_definition']) ?>
+              </p>
+            </div>
+          </div>
           <?php endif; ?>
         </div>
       </div>

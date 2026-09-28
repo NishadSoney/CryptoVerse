@@ -93,10 +93,10 @@ $recentTrades = $stmtTrades->fetchAll(\PDO::FETCH_ASSOC);
 // 2. Fetch completed lessons for Activity Log
 $stmtLessons = $db->prepare("
     SELECT l.title as lesson_title, m.title as module_title, up.completed_at 
-    FROM user_progress up
+    FROM user_lesson_progress up
     JOIN lessons l ON up.lesson_id = l.id
     JOIN modules m ON l.module_id = m.id
-    WHERE up.user_id = :id AND up.status = 'COMPLETED'
+    WHERE up.user_id = :id AND up.completed = 1
     ORDER BY up.completed_at DESC LIMIT 10
 ");
 $stmtLessons->execute([':id' => $_SESSION['user_id']]);
