@@ -54,8 +54,8 @@ if (!isset($active_page)) {
 
     /* Page Load Animation */
     @keyframes smoothPageLoad {
-      0% { opacity: 0; transform: translateY(12px); }
-      100% { opacity: 1; transform: translateY(0); }
+      0% { opacity: 0; }
+      100% { opacity: 1; }
     }
     body {
       animation: smoothPageLoad 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
@@ -162,10 +162,12 @@ if (!isset($active_page)) {
       e.preventDefault();
       menu.style.display = 'none';
       logoutBackdrop.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
     }
 
     function hideLogoutModal() {
       logoutBackdrop.style.display = 'none';
+      document.body.style.overflow = '';
     }
 
     logoutBackdrop.addEventListener('click', function(e) {

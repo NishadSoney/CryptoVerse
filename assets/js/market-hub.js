@@ -204,6 +204,7 @@ function setupFilters() {
 function setupModal() {
     document.getElementById('close-modal').addEventListener('click', () => {
         document.getElementById('study-modal').style.display = 'none';
+        document.body.style.overflow = '';
         if (studyChart) {
             studyChart.remove();
             studyChart = null;
@@ -217,6 +218,7 @@ function setupModal() {
     
     document.getElementById('close-compare-modal').addEventListener('click', () => {
         document.getElementById('compare-modal').style.display = 'none';
+        document.body.style.overflow = '';
         if (cmpChart) {
             cmpChart.remove();
             cmpChart = null;
@@ -240,6 +242,7 @@ function toggleFavorite(symbol) {
 async function openCompareModal() {
     const modal = document.getElementById('compare-modal');
     modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
     
     const selA = document.getElementById('compare-coin-a');
     const selB = document.getElementById('compare-coin-b');
@@ -322,6 +325,7 @@ function updateCompareGrid() {
 async function openStudyModal(symbol) {
     const modal = document.getElementById('study-modal');
     modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
     
     const data = marketData[symbol];
     const assetBase = symbol.replace('USDT', '');

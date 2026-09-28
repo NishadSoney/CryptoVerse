@@ -352,8 +352,10 @@ require_once __DIR__ . '/includes/header.php';
     box-shadow: 0 10px 40px rgba(0,0,0,0.5);
 }
 .study-modal-close {
-    position: absolute; top: 20px; right: 20px; background: none; border: none;
+    position: absolute; top: 16px; right: 16px; background: none; border: none;
     color: #8c899c; cursor: pointer; transition: color 0.2s;
+    width: 36px; height: 36px; display: flex; align-items: center; justify-content: center;
+    border-radius: 50%; padding: 0;
 }
 .study-modal-close:hover { color: #FFF; }
 .study-modal-header {
