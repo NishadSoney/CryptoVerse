@@ -113,11 +113,11 @@ if (!isset($active_page)) {
       
       <!-- Dropdown Menu -->
       <div id="user-dropdown-menu" style="display: none; position: absolute; top: 100%; right: 0; margin-top: 0.5rem; background: #131422; border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; width: 160px; z-index: 1000; box-shadow: 0 4px 12px rgba(0,0,0,0.5); padding: 0.5rem 0; flex-direction: column;">
-        <a href="profile.php" style="display: flex; align-items: center; gap: 8px; padding: 0.5rem 1rem; color: #fff; text-decoration: none; font-size: 0.875rem;">
+        <a href="profile.php" style="display: flex; align-items: center; gap: 8px; padding: 0.5rem 1rem; color: #fff; text-decoration: none; font-size: 0.9188rem;">
           <i data-lucide="user-round" style="width: 15px; height: 15px;"></i> Your Profile
         </a>
         <div style="height: 1px; background: rgba(255,255,255,0.1); margin: 0.25rem 0;"></div>
-        <a href="#" onclick="showLogoutModal(event)" style="display: flex; align-items: center; gap: 8px; padding: 0.5rem 1rem; color: #ef7f9b; text-decoration: none; font-size: 0.875rem;">
+        <a href="#" onclick="showLogoutModal(event)" style="display: flex; align-items: center; gap: 8px; padding: 0.5rem 1rem; color: #ef7f9b; text-decoration: none; font-size: 0.9188rem;">
           <i data-lucide="log-out" style="width: 15px; height: 15px;"></i> Sign Out
         </a>
       </div>
@@ -130,8 +130,8 @@ if (!isset($active_page)) {
       <div style="width: 48px; height: 48px; background: rgba(239, 127, 155, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: #ef7f9b;">
         <i data-lucide="log-out" style="width: 24px; height: 24px;"></i>
       </div>
-      <h2 style="font-size: 1.25rem; font-weight: 700; margin: 0 0 0.5rem;">Sign out of CryptoVerse?</h2>
-      <p style="color: #77758a; margin: 0 0 1.5rem; font-size: 0.875rem; line-height: 1.5;">You will be safely logged out of your session. Your paper trading progress and lessons will be saved.</p>
+      <h2 style="font-size: 1.3125rem; font-weight: 700; margin: 0 0 0.5rem;">Sign out of CryptoVerse?</h2>
+      <p style="color: #77758a; margin: 0 0 1.5rem; font-size: 0.9188rem; line-height: 1.5;">You will be safely logged out of your session. Your paper trading progress and lessons will be saved.</p>
       <div style="display: flex; gap: 1rem; justify-content: center;">
         <button onclick="hideLogoutModal()" style="padding: 0.625rem 1.25rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: transparent; color: #fff; font-weight: 600; cursor: pointer; flex: 1; transition: background 0.2s;">Cancel</button>
         <button onclick="window.location.href='logout.php'" style="padding: 0.625rem 1.25rem; border-radius: 8px; border: none; background: #ef7f9b; color: #191525; font-weight: 700; cursor: pointer; flex: 1; transition: opacity 0.2s;">Sign Out</button>

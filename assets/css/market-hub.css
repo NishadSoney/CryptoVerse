@@ -27,7 +27,7 @@
 }
 
 .hub-widget-title {
-    font-size: 0.875rem;
+    font-size: 0.9188rem;
     font-weight: 700;
     color: #FFF;
     margin: 0 0 1rem 0;
@@ -47,7 +47,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-size: 0.8125rem;
+    font-size: 0.8531rem;
 }
 
 .gl-item-rank {
@@ -69,7 +69,7 @@
 }
 
 .gl-item-name span {
-    font-size: 0.6875rem;
+    font-size: 0.7219rem;
     color: #64748B;
 }
 
@@ -100,7 +100,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-size: 0.625rem;
+    font-size: 0.6563rem;
     font-weight: 700;
     color: #111;
     padding: 0.25rem;
@@ -116,7 +116,7 @@
 .heatmap-large {
     grid-column: span 2;
     grid-row: span 2;
-    font-size: 0.875rem;
+    font-size: 0.9188rem;
 }
 
 /* Sentiment Gauge */
@@ -135,14 +135,14 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
-    font-size: 0.6875rem;
+    font-size: 0.7219rem;
     color: #64748B;
     margin-top: 0.5rem;
 }
 .sentiment-score {
     position: absolute;
     bottom: 0.5rem;
-    font-size: 1.25rem;
+    font-size: 1.3125rem;
     font-weight: 800;
     color: #FFF;
 }
@@ -163,7 +163,7 @@
 }
 
 .hub-header h1 {
-    font-size: 1.5rem;
+    font-size: 1.575rem;
     font-weight: 800;
     margin: 0;
 }
@@ -180,7 +180,7 @@
 
 .hub-tab {
     padding: 0.5rem 1rem;
-    font-size: 0.75rem;
+    font-size: 0.7875rem;
     font-weight: 600;
     color: #94A3B8;
     background: transparent;
@@ -217,7 +217,7 @@
 .market-table th {
     text-align: left;
     padding: 1rem;
-    font-size: 0.6875rem;
+    font-size: 0.7219rem;
     font-weight: 600;
     color: #94A3B8;
     text-transform: uppercase;
@@ -227,7 +227,7 @@
 
 .market-table td {
     padding: 1rem;
-    font-size: 0.8125rem;
+    font-size: 0.8531rem;
     border-bottom: 1px solid rgba(255, 255, 255, 0.03);
     vertical-align: middle;
 }
@@ -253,7 +253,7 @@
     color: #FFF;
 }
 .td-asset-info span {
-    font-size: 0.6875rem;
+    font-size: 0.7219rem;
     color: #64748B;
 }
 
@@ -271,7 +271,7 @@
 
 .btn-mini {
     padding: 0.25rem 0.5rem;
-    font-size: 0.6875rem;
+    font-size: 0.7219rem;
     font-weight: 600;
     border-radius: 0.25rem;
     border: none;
@@ -319,7 +319,7 @@
     padding: 4rem;
     text-align: center;
     color: #94A3B8;
-    font-size: 0.875rem;
+    font-size: 0.9188rem;
 }
 .market-loading i {
     animation: spin 1s linear infinite;

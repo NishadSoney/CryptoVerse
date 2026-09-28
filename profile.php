@@ -159,7 +159,7 @@ $tones = ['orange' => '#f7931a', 'blue' => '#627eea', 'green' => '#14d99a', 'pin
 <link rel="stylesheet" href="assets/css/profile.css?v=<?= time() ?>">
 
 <div class="profile-content">
-  <a href="dashboard.php" style="display:flex; align-items:center; gap:6px; color:#898798; font-size:12px; text-decoration:none; margin-bottom: 20px;">
+  <a href="dashboard.php" style="display:flex; align-items:center; gap:6px; color:#898798; font-size: 13px; text-decoration:none; margin-bottom: 20px;">
     <i data-lucide="arrow-left" style="width: 14px; height: 14px;"></i> Back to dashboard
   </a>
   <div class="profile-heading">
@@ -184,13 +184,13 @@ $tones = ['orange' => '#f7931a', 'blue' => '#627eea', 'green' => '#14d99a', 'pin
       </div>
       
       <?php if (isset($successMessage)): ?>
-      <div style="background: rgba(93, 227, 202, 0.1); color: var(--mint); padding: 10px; border-radius: 6px; font-size: 11px; margin-top: 15px; border: 1px solid rgba(93, 227, 202, 0.2);">
+      <div style="background: rgba(93, 227, 202, 0.1); color: var(--mint); padding: 10px; border-radius: 6px; font-size: 12px; margin-top: 15px; border: 1px solid rgba(93, 227, 202, 0.2);">
         <?= $successMessage ?>
       </div>
       <?php endif; ?>
       
       <?php if (isset($errorMessage)): ?>
-      <div style="background: rgba(239, 127, 155, 0.1); color: #ef7f9b; padding: 10px; border-radius: 6px; font-size: 11px; margin-top: 15px; border: 1px solid rgba(239, 127, 155, 0.2);">
+      <div style="background: rgba(239, 127, 155, 0.1); color: #ef7f9b; padding: 10px; border-radius: 6px; font-size: 12px; margin-top: 15px; border: 1px solid rgba(239, 127, 155, 0.2);">
         <?= $errorMessage ?>
       </div>
       <?php endif; ?>
@@ -219,7 +219,7 @@ $tones = ['orange' => '#f7931a', 'blue' => '#627eea', 'green' => '#14d99a', 'pin
                 <input type="text" name="username" id="username-input" value="<?= htmlspecialchars($userRow['username']) ?>" readonly required />
               </div>
             </label>
-            <button type="button" class="text-action" onclick="document.getElementById('username-input').readOnly = false; document.getElementById('username-input').focus();" style="align-self: flex-start; margin-top: 6px; font-size: 11px;">
+            <button type="button" class="text-action" onclick="document.getElementById('username-input').readOnly = false; document.getElementById('username-input').focus();" style="align-self: flex-start; margin-top: 6px; font-size: 12px;">
               <i data-lucide="pencil" style="width: 11px; height: 11px;"></i> Edit username
             </button>
           </div>
@@ -231,12 +231,12 @@ $tones = ['orange' => '#f7931a', 'blue' => '#627eea', 'green' => '#14d99a', 'pin
                 <input type="email" name="email" id="email-input" value="<?= htmlspecialchars($email) ?>" readonly required />
               </div>
             </label>
-            <button type="button" class="text-action" onclick="document.getElementById('email-input').readOnly = false; document.getElementById('email-input').focus();" style="align-self: flex-start; margin-top: 6px; font-size: 11px;">
+            <button type="button" class="text-action" onclick="document.getElementById('email-input').readOnly = false; document.getElementById('email-input').focus();" style="align-self: flex-start; margin-top: 6px; font-size: 12px;">
               <i data-lucide="pencil" style="width: 11px; height: 11px;"></i> Edit email
             </button>
           </div>
         </div>
-        <button type="submit" id="form-save-btn" class="text-action" style="margin-top: 20px; font-weight: 600; font-size: 13px; opacity:0.6;" disabled>
+        <button type="submit" id="form-save-btn" class="text-action" style="margin-top: 20px; font-weight: 600; font-size: 14px; opacity:0.6;" disabled>
           <i data-lucide="check" style="width: 14px; height: 14px;"></i> Saved
         </button>
       </form>
@@ -273,13 +273,13 @@ $tones = ['orange' => '#f7931a', 'blue' => '#627eea', 'green' => '#14d99a', 'pin
         <strong>$<?= number_format($estimatedTotal, 2) ?></strong>
       </div>
       <div class="funds-actions">
-        <a href="practice.php" style="text-decoration: none; padding: 6px 12px; background: rgba(255,255,255,0.1); color: #fff; border-radius: 4px; display: flex; align-items: center; gap: 6px; font-size: 10px;">
+        <a href="practice.php" style="text-decoration: none; padding: 6px 12px; background: rgba(255,255,255,0.1); color: #fff; border-radius: 4px; display: flex; align-items: center; gap: 6px; font-size: 11px;">
           <i data-lucide="plus" style="width: 12px; height: 12px;"></i> Trade Assets
         </a>
-        <button onclick="promptAddFunds()" style="border: none; padding: 6px 12px; background: rgba(93, 227, 202, 0.15); color: var(--mint); border-radius: 4px; display: flex; align-items: center; gap: 6px; font-size: 10px; cursor: pointer; font-family: inherit; font-weight: 600;">
+        <button onclick="promptAddFunds()" style="border: none; padding: 6px 12px; background: rgba(93, 227, 202, 0.15); color: var(--mint); border-radius: 4px; display: flex; align-items: center; gap: 6px; font-size: 11px; cursor: pointer; font-family: inherit; font-weight: 600;">
           <i data-lucide="banknote" style="width: 12px; height: 12px;"></i> Add Funds
         </button>
-        <a href="export_history.php" target="_blank" style="text-decoration: none; padding: 6px 12px; border: 1px solid rgba(255,255,255,0.1); background: transparent; color: #fff; border-radius: 4px; display: flex; align-items: center; gap: 6px; font-size: 10px;">
+        <a href="export_history.php" target="_blank" style="text-decoration: none; padding: 6px 12px; border: 1px solid rgba(255,255,255,0.1); background: transparent; color: #fff; border-radius: 4px; display: flex; align-items: center; gap: 6px; font-size: 11px;">
           <i data-lucide="download" style="width: 12px; height: 12px;"></i> Export history
         </a>
       </div>
@@ -348,7 +348,7 @@ $tones = ['orange' => '#f7931a', 'blue' => '#627eea', 'green' => '#14d99a', 'pin
       </div>
       <div class="favorite-list">
         <?php if (empty($holdings)): ?>
-            <p style="color: #777489; font-size: 12px; padding: 10px 0;">You have no active holdings.</p>
+            <p style="color: #777489; font-size: 13px; padding: 10px 0;">You have no active holdings.</p>
         <?php else: ?>
             <?php foreach ($holdings as $idx => $coin): 
                 $toneKeys = array_keys($tones);

@@ -25,8 +25,8 @@ require_once __DIR__ . '/includes/header.php';
             <p>Explore live-style crypto data and learn how traders read the market. No real money or trading involved.</p>
         </div>
         <div class="market-total">
-            <span class="muted-label" style="font-size:0.6875rem; color:#8c899c;">TOTAL MARKET CAP</span>
-            <strong id="hero-total-cap" style="font-size:28px; font-weight:500;">$0.00T</strong>
+            <span class="muted-label" style="font-size: 0.7219rem; color:#8c899c;">TOTAL MARKET CAP</span>
+            <strong id="hero-total-cap" style="font-size: 29px; font-weight:500;">$0.00T</strong>
             <span id="hero-total-change" class="market-positive" style="display:flex; align-items:center; gap:4px;"><i data-lucide="arrow-up" style="width:13px; height:13px;"></i> 0.00% today</span>
         </div>
       </div>
@@ -95,7 +95,7 @@ require_once __DIR__ . '/includes/header.php';
                 <div><strong>ARB</strong><span>Arbitrum</span></div>
                 <div style="text-align:right">
                     <b style="color:#FFF; display:block;">$87.5M</b>
-                    <span style="color:#f3ad45; font-size:10px;">In 3 Days</span>
+                    <span style="color:#f3ad45; font-size: 11px;">In 3 Days</span>
                 </div>
             </div>
             <div class="spotlight-row">
@@ -103,7 +103,7 @@ require_once __DIR__ . '/includes/header.php';
                 <div><strong>SOL</strong><span>Solana</span></div>
                 <div style="text-align:right">
                     <b style="color:#FFF; display:block;">$42.1M</b>
-                    <span style="color:#f3ad45; font-size:10px;">In 5 Days</span>
+                    <span style="color:#f3ad45; font-size: 11px;">In 5 Days</span>
                 </div>
             </div>
             <div class="spotlight-row">
@@ -111,7 +111,7 @@ require_once __DIR__ . '/includes/header.php';
                 <div><strong>IMX</strong><span>Immutable</span></div>
                 <div style="text-align:right">
                     <b style="color:#FFF; display:block;">$12.3M</b>
-                    <span style="color:#f3ad45; font-size:10px;">In 8 Days</span>
+                    <span style="color:#f3ad45; font-size: 11px;">In 8 Days</span>
                 </div>
             </div>
         </article>
@@ -121,38 +121,38 @@ require_once __DIR__ . '/includes/header.php';
                 <div style="flex:1; background:rgba(255,255,255,0.02); border-radius:6px; padding:12px;">
                     <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
                         <div style="display:flex; align-items:center; gap:8px;">
-                            <span class="coin-icon" style="background:#111; color:#FFF; width:24px; height:24px; font-size:12px;">A</span>
+                            <span class="coin-icon" style="background:#111; color:#FFF; width:24px; height:24px; font-size: 13px;">A</span>
                             <span style="color:#FFF; font-weight:500;">Aptos</span>
                         </div>
-                        <span style="color:#817e90; font-size:10px;">Unlocked Yesterday</span>
+                        <span style="color:#817e90; font-size: 11px;">Unlocked Yesterday</span>
                     </div>
-                    <div style="color:#5de3ca; font-size:20px; font-family:'Space Mono', monospace;">$24.5M</div>
-                    <div style="color:#817e90; font-size:11px; margin-top:4px;">1.5% of Circulating Supply</div>
+                    <div style="color:#5de3ca; font-size: 21px; font-family:'Space Mono', monospace;">$24.5M</div>
+                    <div style="color:#817e90; font-size: 12px; margin-top:4px;">1.5% of Circulating Supply</div>
                 </div>
                 <div style="flex:1; background:rgba(255,255,255,0.02); border-radius:6px; padding:12px;">
                     <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
                         <div style="display:flex; align-items:center; gap:8px;">
-                            <span class="coin-icon" style="background:#8f2323; color:#191525; width:24px; height:24px; font-size:12px;">R</span>
+                            <span class="coin-icon" style="background:#8f2323; color:#191525; width:24px; height:24px; font-size: 13px;">R</span>
                             <span style="color:#FFF; font-weight:500;">Render</span>
                         </div>
-                        <span style="color:#817e90; font-size:10px;">Unlocked 3 days ago</span>
+                        <span style="color:#817e90; font-size: 11px;">Unlocked 3 days ago</span>
                     </div>
-                    <div style="color:#5de3ca; font-size:20px; font-family:'Space Mono', monospace;">$18.2M</div>
-                    <div style="color:#817e90; font-size:11px; margin-top:4px;">0.8% of Circulating Supply</div>
+                    <div style="color:#5de3ca; font-size: 21px; font-family:'Space Mono', monospace;">$18.2M</div>
+                    <div style="color:#817e90; font-size: 12px; margin-top:4px;">0.8% of Circulating Supply</div>
                 </div>
             </div>
         </article>
         <article class="spotlight-card">
             <div class="spotlight-heading"><strong>Vesting Progress</strong><button>More <span>›</span></button></div>
             <div style="margin-top:16px;">
-                <div style="display:flex; justify-content:space-between; color:#FFF; font-size:12px; margin-bottom:8px;">
+                <div style="display:flex; justify-content:space-between; color:#FFF; font-size: 13px; margin-bottom:8px;">
                     <span>SUI Vesting</span>
                     <span>45% Unlocked</span>
                 </div>
                 <div style="width:100%; height:6px; background:rgba(255,255,255,0.1); border-radius:3px; overflow:hidden;">
                     <div style="width:45%; height:100%; background:#8497f5;"></div>
                 </div>
-                <div style="color:#817e90; font-size:10px; margin-top:8px;">Next cliff: 12% in 24 days</div>
+                <div style="color:#817e90; font-size: 11px; margin-top:8px;">Next cliff: 12% in 24 days</div>
             </div>
         </article>
       </section>
@@ -161,12 +161,12 @@ require_once __DIR__ . '/includes/header.php';
       <section class="market-table-card">
         <div class="market-table-top">
             <div>
-                <div class="section-kicker" style="font-size:10px; color:#817e90; letter-spacing:0.1em; margin-bottom:4px;">CRYPTO ASSETS</div>
-                <h2 style="font-size:23px; font-weight:500; margin:0 0 6px 0;">Top tokens by market capitalization</h2>
-                <p style="color:#817e90; font-size:11px; margin:0;">A clear snapshot of prices, momentum, volume, and market behavior.</p>
+                <div class="section-kicker" style="font-size: 11px; color:#817e90; letter-spacing:0.1em; margin-bottom:4px;">CRYPTO ASSETS</div>
+                <h2 style="font-size: 24px; font-weight:500; margin:0 0 6px 0;">Top tokens by market capitalization</h2>
+                <p style="color:#817e90; font-size: 12px; margin:0;">A clear snapshot of prices, momentum, volume, and market behavior.</p>
             </div>
             <div class="market-tools">
-                <button id="open-compare-btn" style="background:transparent; border:1px solid rgba(255,255,255,0.11); border-radius:4px; color:#aaa7b8; display:flex; align-items:center; gap:7px; padding:10px 12px; font-size:10px; cursor:pointer; transition:all 0.2s;"><i data-lucide="bar-chart-3" style="width:14px; height:14px;"></i> Compare</button>
+                <button id="open-compare-btn" style="background:transparent; border:1px solid rgba(255,255,255,0.11); border-radius:4px; color:#aaa7b8; display:flex; align-items:center; gap:7px; padding:10px 12px; font-size: 11px; cursor:pointer; transition:all 0.2s;"><i data-lucide="bar-chart-3" style="width:14px; height:14px;"></i> Compare</button>
             </div>
         </div>
         
@@ -180,7 +180,7 @@ require_once __DIR__ . '/includes/header.php';
             <button>Zones</button>
             <label style="display:flex; align-items:center; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.11); border-radius:4px; color:#777489; margin-left:auto; padding:8px 10px; gap:7px;">
                 <i data-lucide="search" style="width:14px; height:14px;"></i>
-                <input id="coin-search-input" placeholder="Search coin name" style="background:none; border:0; color:#FFF; font-size:10px; outline:0; width:125px;" />
+                <input id="coin-search-input" placeholder="Search coin name" style="background:none; border:0; color:#FFF; font-size: 11px; outline:0; width:125px;" />
             </label>
         </div>
         
@@ -206,7 +206,7 @@ require_once __DIR__ . '/includes/header.php';
             
             <div id="market-table-body">
                 <!-- Populated by JS -->
-                <div style="padding:4rem; text-align:center; color:#94A3B8; font-size:14px; grid-column:1/-1;">
+                <div style="padding:4rem; text-align:center; color:#94A3B8; font-size: 15px; grid-column:1/-1;">
                     <i data-lucide="loader-2" style="width:24px; height:24px; animation:spin 1s linear infinite; margin-bottom:10px;"></i><br/>
                     Connecting to live market stream...
                 </div>
@@ -215,7 +215,7 @@ require_once __DIR__ . '/includes/header.php';
         </div>
       </section>
       
-      <div class="market-disclaimer" style="display:flex; align-items:center; gap:9px; color:#777489; font-size:10px; margin-top:24px;">
+      <div class="market-disclaimer" style="display:flex; align-items:center; gap:9px; color:#777489; font-size: 11px; margin-top:24px;">
         <i data-lucide="trending-up" style="width:16px; height:16px; color:#5de3ca;"></i>
         <span>Prices update in simulation mode. Use these views to practice spotting patterns, not to predict the future.</span>
         <i data-lucide="wallet" style="width:16px; height:16px; color:#a294ff; margin-left:auto;"></i>
@@ -226,7 +226,7 @@ require_once __DIR__ . '/includes/header.php';
     <div class="study-modal-content">
         <button id="close-modal" class="study-modal-close"><i data-lucide="x" style="width:20px; height:20px;"></i></button>
         <div class="study-modal-header">
-            <div id="study-asset-title" style="display:flex; align-items:center; gap:12px; font-size:24px; font-weight:600; color:#FFF;">
+            <div id="study-asset-title" style="display:flex; align-items:center; gap:12px; font-size: 25px; font-weight:600; color:#FFF;">
                 <!-- Injected via JS -->
             </div>
             <div id="study-asset-price" style="position:absolute; left:50%; transform:translateX(-50%); text-align:center;">
@@ -271,7 +271,7 @@ require_once __DIR__ . '/includes/header.php';
         <button id="close-compare-modal" class="study-modal-close"><i data-lucide="x" style="width:20px; height:20px;"></i></button>
         
         <div class="compare-header">
-            <h3 style="margin:0; font-size:20px; font-weight:500;">Compare Assets</h3>
+            <h3 style="margin:0; font-size: 21px; font-weight:500;">Compare Assets</h3>
             <div class="compare-selectors">
                 <div class="compare-select-wrapper">
                     <span class="compare-dot" style="background:#8d7aff;"></span>
@@ -279,7 +279,7 @@ require_once __DIR__ . '/includes/header.php';
                         <!-- Populated by JS -->
                     </select>
                 </div>
-                <span style="color:#817e90; font-size:12px;">VS</span>
+                <span style="color:#817e90; font-size: 13px;">VS</span>
                 <div class="compare-select-wrapper">
                     <span class="compare-dot" style="background:#5de3ca;"></span>
                     <select id="compare-coin-b" class="compare-dropdown">
@@ -369,8 +369,8 @@ require_once __DIR__ . '/includes/header.php';
     background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07);
     border-radius: 8px; padding: 12px; display: flex; flex-direction: column; gap: 4px;
 }
-.study-stat-box span { color: #777489; font-size: 10px; text-transform: uppercase; letter-spacing: 0.05em; }
-.study-stat-box strong { color: #FFF; font-size: 14px; font-weight: 500; font-family: 'Space Mono', monospace; }
+.study-stat-box span { color: #777489; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; }
+.study-stat-box strong { color: #FFF; font-size: 15px; font-weight: 500; font-family: 'Space Mono', monospace; }
 
 /* Compare Modal Styles */
 .compare-header {
@@ -389,7 +389,7 @@ require_once __DIR__ . '/includes/header.php';
     width: 8px; height: 8px; border-radius: 50%;
 }
 .compare-dropdown {
-    background: transparent; border: none; color: #FFF; font-size: 14px; font-weight: 500; outline: none; cursor: pointer;
+    background: transparent; border: none; color: #FFF; font-size: 15px; font-weight: 500; outline: none; cursor: pointer;
 }
 .compare-dropdown option {
     background: #111024; color: #FFF;
@@ -408,8 +408,8 @@ require_once __DIR__ . '/includes/header.php';
 .compare-stat-item:last-child {
     border-bottom: none; padding-bottom: 0;
 }
-.compare-stat-item span { color: #8c899c; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; }
-.compare-stat-item strong { color: #FFF; font-size: 14px; font-family: 'Space Mono', monospace; }
+.compare-stat-item span { color: #8c899c; font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; }
+.compare-stat-item strong { color: #FFF; font-size: 15px; font-family: 'Space Mono', monospace; }
   /* Custom styling for chart */
   #compare-chart-container {
       width: 100%;

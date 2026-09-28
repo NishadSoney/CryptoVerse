@@ -85,7 +85,7 @@ if ($xp > 0) {
         <div>
           <div class="section-kicker"><i data-lucide="zap" style="width: 14px; height: 14px; margin-right: 4px; display:inline-block; vertical-align:-3px;"></i> LIVE SIMULATION</div>
           <h2>Market insights</h2>
-          <p style="color: #838091; font-size: 11px; margin-top: 5px;">Understand the market without the noise.</p>
+          <p style="color: #838091; font-size: 12px; margin-top: 5px;">Understand the market without the noise.</p>
         </div>
         <div class="updated-badge"><i data-lucide="refresh-cw" style="width: 12px; height: 12px; margin-right:4px;"></i> UPDATED JUST NOW</div>
       </div>
@@ -194,8 +194,8 @@ if ($xp > 0) {
           <?php if (empty($completedLessons)): ?>
             <div class="lesson-row" style="padding: 25px 0; border: none;">
               <div class="lesson-row-copy">
-                <strong style="font-size: 14px; margin-bottom: 6px;">You haven't completed any lessons yet.</strong>
-                <span style="font-size: 11px;">Start your journey to unlock new insights!</span>
+                <strong style="font-size: 15px; margin-bottom: 6px;">You haven't completed any lessons yet.</strong>
+                <span style="font-size: 12px;">Start your journey to unlock new insights!</span>
               </div>
             </div>
           <?php else: ?>
@@ -205,18 +205,18 @@ if ($xp > 0) {
                 <i data-lucide="award" style="width: 16px; height: 16px; color: var(--mint);"></i>
                 <span class="section-kicker" style="margin: 0; color: var(--mint);">LATEST LESSON COMPLETED</span>
               </div>
-              <h3 style="font-size: 18px; margin: 0 0 10px 0; color: #fff;"><?= htmlspecialchars($lastLesson['title']) ?></h3>
-              <p style="font-size: 13px; color: #94A3B8; line-height: 1.5; margin: 0 0 15px 0;">
+              <h3 style="font-size: 19px; margin: 0 0 10px 0; color: #fff;"><?= htmlspecialchars($lastLesson['title']) ?></h3>
+              <p style="font-size: 14px; color: #94A3B8; line-height: 1.5; margin: 0 0 15px 0;">
                 <?= htmlspecialchars($lastLesson['summary']) ?>
               </p>
               <div style="background: rgba(0,0,0,0.2); padding: 12px; border-radius: 8px; border-left: 3px solid var(--mint);">
-                <strong style="display: block; font-size: 11px; color: #777489; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px;">Key Takeaway</strong>
-                <span style="font-size: 13px; color: #e2e8f0; line-height: 1.4;"><?= htmlspecialchars($lastLesson['key_takeaway']) ?></span>
+                <strong style="display: block; font-size: 12px; color: #777489; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px;">Key Takeaway</strong>
+                <span style="font-size: 14px; color: #e2e8f0; line-height: 1.4;"><?= htmlspecialchars($lastLesson['key_takeaway']) ?></span>
               </div>
             </div>
 
             <?php if (count($completedLessons) > 1): ?>
-              <div style="font-size: 11px; font-weight: 700; color: #777489; letter-spacing: 1px; text-transform: uppercase; margin: 20px 0 10px 0;">Previous Lessons</div>
+              <div style="font-size: 12px; font-weight: 700; color: #777489; letter-spacing: 1px; text-transform: uppercase; margin: 20px 0 10px 0;">Previous Lessons</div>
               <?php for($i = 1; $i < count($completedLessons); $i++): $cl = $completedLessons[$i]; ?>
               <div class="lesson-row" style="align-items: start; gap: 14px;">
                 <span class="lesson-number" style="margin-top: 2px;"><i data-lucide="check" style="width: 14px; height: 14px; color: var(--mint);"></i></span>
@@ -237,10 +237,10 @@ if ($xp > 0) {
             <div style="position: relative; z-index: 1;">
               <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
                 <i data-lucide="lightbulb" style="width: 14px; height: 14px; color: #8d7aff;"></i>
-                <span style="font-size: 10px; font-weight: 700; letter-spacing: 1px; color: #8d7aff; text-transform: uppercase;">Term of the Day</span>
+                <span style="font-size: 11px; font-weight: 700; letter-spacing: 1px; color: #8d7aff; text-transform: uppercase;">Term of the Day</span>
               </div>
-              <h4 style="margin: 0 0 6px 0; font-size: 15px; color: #fff;"><?= htmlspecialchars($randomTerm['term']) ?></h4>
-              <p style="margin: 0; font-size: 12px; color: #94A3B8; line-height: 1.5;">
+              <h4 style="margin: 0 0 6px 0; font-size: 16px; color: #fff;"><?= htmlspecialchars($randomTerm['term']) ?></h4>
+              <p style="margin: 0; font-size: 13px; color: #94A3B8; line-height: 1.5;">
                 <?= htmlspecialchars($randomTerm['simple_definition']) ?>
               </p>
             </div>
@@ -259,7 +259,7 @@ if ($xp > 0) {
         </div>
         
         <div class="news-scroller" id="dashboard-news-list">
-          <div style="padding: 20px; text-align: center; color: #838091; font-size: 11px;">
+          <div style="padding: 20px; text-align: center; color: #838091; font-size: 12px;">
             <i data-lucide="loader-2" class="spin" style="margin-bottom: 10px;"></i><br/>Loading latest news...
           </div>
         </div>

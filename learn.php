@@ -142,7 +142,7 @@ require_once __DIR__ . '/includes/header.php';
                   $shadow = '0 0 10px rgba(93,227,202,0.5)';
               }
             ?>
-            <a href="<?= $l['state'] !== 'locked' ? 'lesson.php?id=' . (int)$l['id'] : '#' ?>" title="<?= htmlspecialchars($l['title']) ?>" style="text-decoration: none; width: 28px; height: 28px; flex-shrink: 0; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: <?= $bg ?>; color: <?= $color ?>; font-size: 0.75rem; font-weight: 700; transition: all 0.3s; box-shadow: <?= $shadow ?>; cursor: <?= $l['state'] !== 'locked' ? 'pointer' : 'default' ?>; z-index: 2; position: relative;">
+            <a href="<?= $l['state'] !== 'locked' ? 'lesson.php?id=' . (int)$l['id'] : '#' ?>" title="<?= htmlspecialchars($l['title']) ?>" style="text-decoration: none; width: 28px; height: 28px; flex-shrink: 0; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: <?= $bg ?>; color: <?= $color ?>; font-size: 0.7875rem; font-weight: 700; transition: all 0.3s; box-shadow: <?= $shadow ?>; cursor: <?= $l['state'] !== 'locked' ? 'pointer' : 'default' ?>; z-index: 2; position: relative;">
               <?= $idx + 1 ?>
             </a>
 

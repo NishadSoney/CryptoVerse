@@ -91,17 +91,17 @@ $userNote = '';
   <!-- TOP APP BAR -->
   <header style="border-bottom: 1px solid rgba(255, 255, 255, 0.08); background: #101027; padding: 0.75rem 1.5rem; position: sticky; top: 0; z-index: 40;">
     <div style="max-width: 96rem; margin: 0 auto; display: flex; align-items: center; justify-content: space-between;">
-      <a href="learn.php" style="display: flex; align-items: center; gap: 0.5rem; text-decoration: none; color: #94A3B8; font-size: 0.8125rem; font-weight: 600;">
+      <a href="learn.php" style="display: flex; align-items: center; gap: 0.5rem; text-decoration: none; color: #94A3B8; font-size: 0.8531rem; font-weight: 600;">
         <i data-lucide="arrow-left" style="width: 1rem; height: 1rem;"></i>
         <span>Back to Curriculum</span>
       </a>
 
       <!-- DUAL EXPLANATION MODE SWITCHER -->
       <div style="display: flex; align-items: center; background: rgba(0, 0, 0, 0.5); padding: 3px; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.1);">
-        <button id="btn-mode-beginner" onclick="setMode('beginner')" style="padding: 4px 12px; font-size: 0.75rem; font-weight: 700; border-radius: 6px; border: none; cursor: pointer; background: #6150d5; color: #FFF; transition: all 0.2s;">
+        <button id="btn-mode-beginner" onclick="setMode('beginner')" style="padding: 4px 12px; font-size: 0.7875rem; font-weight: 700; border-radius: 6px; border: none; cursor: pointer; background: #6150d5; color: #FFF; transition: all 0.2s;">
           Beginner (Analogies)
         </button>
-        <button id="btn-mode-technical" onclick="setMode('technical')" style="padding: 4px 12px; font-size: 0.75rem; font-weight: 700; border-radius: 6px; border: none; cursor: pointer; background: transparent; color: #94A3B8; transition: all 0.2s;">
+        <button id="btn-mode-technical" onclick="setMode('technical')" style="padding: 4px 12px; font-size: 0.7875rem; font-weight: 700; border-radius: 6px; border: none; cursor: pointer; background: transparent; color: #94A3B8; transition: all 0.2s;">
           Technical (Protocol)
         </button>
       </div>
@@ -115,26 +115,26 @@ $userNote = '';
     <!-- LESSON TITLE & BADGES -->
     <div style="margin-bottom: 2rem;">
       <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-        <span style="font-size: 0.6875rem; font-family: 'Space Mono', monospace; color: #b6adff; font-weight: 700;">
+        <span style="font-size: 0.7219rem; font-family: 'Space Mono', monospace; color: #b6adff; font-weight: 700;">
           LESSON <?= str_pad((string)$lesson['sort_order'], 2, '0', STR_PAD_LEFT) ?>
         </span>
         <span style="color: #475569;">•</span>
-        <span style="font-size: 0.6875rem; color: #94A3B8;"><?= (int)$lesson['estimated_minutes'] ?> min read</span>
+        <span style="font-size: 0.7219rem; color: #94A3B8;"><?= (int)$lesson['estimated_minutes'] ?> min read</span>
         <span style="color: #475569;">•</span>
-        <span style="font-size: 0.6875rem; color: #5de3ca; font-weight: 700; font-family: 'Space Mono', monospace;">+<?= (int)$lesson['xp_reward'] ?> XP</span>
+        <span style="font-size: 0.7219rem; color: #5de3ca; font-weight: 700; font-family: 'Space Mono', monospace;">+<?= (int)$lesson['xp_reward'] ?> XP</span>
       </div>
-      <h1 style="font-size: 2rem; font-weight: 800; line-height: 1.25; margin: 0 0 0.75rem 0;"><?= htmlspecialchars($lesson['title']) ?></h1>
-      <p style="font-size: 1rem; color: #94A3B8; margin: 0;"><?= htmlspecialchars($lesson['summary']) ?></p>
+      <h1 style="font-size: 2.1rem; font-weight: 800; line-height: 1.25; margin: 0 0 0.75rem 0;"><?= htmlspecialchars($lesson['title']) ?></h1>
+      <p style="font-size: 1.05rem; color: #94A3B8; margin: 0;"><?= htmlspecialchars($lesson['summary']) ?></p>
     </div>
 
     <!-- DUAL EXPLANATION SECTIONS -->
     <!-- 1. BEGINNER EXPLANATION -->
     <div id="section-beginner" style="display: block; background: #14142b; border: 1px solid rgba(59, 130, 246, 0.2); border-radius: 1rem; padding: 2rem; margin-bottom: 2rem;">
-      <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem; color: #b6adff; font-size: 0.8125rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;">
+      <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem; color: #b6adff; font-size: 0.8531rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;">
         <i data-lucide="sparkles" style="width: 1.125rem; height: 1.125rem;"></i>
         <span>Beginner Mode: Real-World Analogy</span>
       </div>
-      <div style="font-size: 0.9375rem; line-height: 1.7; color: #CBD5E1;">
+      <div style="font-size: 0.9844rem; line-height: 1.7; color: #CBD5E1;">
         <p style="margin-top: 0; font-style: italic; color: #93C5FD; border-left: 3px solid #8d7aff; padding-left: 1rem;">
           <?= htmlspecialchars($lesson['analogy']) ?>
         </p>
@@ -144,11 +144,11 @@ $userNote = '';
 
     <!-- 2. TECHNICAL EXPLANATION -->
     <div id="section-technical" style="display: none; background: #14142b; border: 1px solid rgba(129, 140, 248, 0.2); border-radius: 1rem; padding: 2rem; margin-bottom: 2rem;">
-      <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem; color: #818CF8; font-size: 0.8125rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;">
+      <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem; color: #818CF8; font-size: 0.8531rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;">
         <i data-lucide="cpu" style="width: 1.125rem; height: 1.125rem;"></i>
         <span>Technical Mode: Network & Cryptographic Specification</span>
       </div>
-      <div style="font-size: 0.9375rem; line-height: 1.7; color: #CBD5E1;">
+      <div style="font-size: 0.9844rem; line-height: 1.7; color: #CBD5E1;">
         <p><?= nl2br(htmlspecialchars($lesson['technical_explanation'])) ?></p>
       </div>
     </div>
@@ -158,17 +158,17 @@ $userNote = '';
       <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
         <div style="display: flex; align-items: center; gap: 0.5rem;">
           <i data-lucide="terminal" style="width: 1.125rem; height: 1.125rem; color: #38BDF8;"></i>
-          <span style="font-size: 0.875rem; font-weight: 700; color: #FFF;">Interactive Protocol Lab: Cryptographic Hash Simulator</span>
+          <span style="font-size: 0.9188rem; font-weight: 700; color: #FFF;">Interactive Protocol Lab: Cryptographic Hash Simulator</span>
         </div>
-        <span style="font-size: 0.6875rem; font-family: 'Space Mono', monospace; color: #64748B;">SHA-256 ALGORITHM</span>
+        <span style="font-size: 0.7219rem; font-family: 'Space Mono', monospace; color: #64748B;">SHA-256 ALGORITHM</span>
       </div>
-      <p style="font-size: 0.75rem; color: #94A3B8; margin: 0 0 0.75rem 0;">
+      <p style="font-size: 0.7875rem; color: #94A3B8; margin: 0 0 0.75rem 0;">
         Type any message in the input box. Notice how changing a single letter alters the entire 64-character hexadecimal output completely (the cryptographic <em>avalanche effect</em>).
       </p>
-      <input type="text" id="hash-input" value="CryptoVerse Transaction 001" oninput="calculateLiveHash(this.value)" style="width: 100%; box-sizing: border-box; background: #080914; border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 0.5rem; padding: 0.625rem 0.875rem; color: #FFF; font-size: 0.8125rem; font-family: 'Space Mono', monospace; margin-bottom: 0.75rem;">
+      <input type="text" id="hash-input" value="CryptoVerse Transaction 001" oninput="calculateLiveHash(this.value)" style="width: 100%; box-sizing: border-box; background: #080914; border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 0.5rem; padding: 0.625rem 0.875rem; color: #FFF; font-size: 0.8531rem; font-family: 'Space Mono', monospace; margin-bottom: 0.75rem;">
       <div>
-        <span style="font-size: 0.6875rem; color: #64748B; text-transform: uppercase; font-weight: 700;">Calculated Hash:</span>
-        <div id="hash-output" style="font-family: 'Space Mono', monospace; font-size: 0.75rem; color: #38BDF8; word-break: break-all; background: #080914; padding: 0.625rem; border-radius: 0.375rem; border: 1px solid rgba(56, 189, 248, 0.2); margin-top: 0.25rem;">
+        <span style="font-size: 0.7219rem; color: #64748B; text-transform: uppercase; font-weight: 700;">Calculated Hash:</span>
+        <div id="hash-output" style="font-family: 'Space Mono', monospace; font-size: 0.7875rem; color: #38BDF8; word-break: break-all; background: #080914; padding: 0.625rem; border-radius: 0.375rem; border: 1px solid rgba(56, 189, 248, 0.2); margin-top: 0.25rem;">
           e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
         </div>
       </div>
@@ -184,15 +184,15 @@ $userNote = '';
       <div style="background: #14142b; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 1rem; padding: 2rem;">
         <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 1rem; margin-bottom: 1.5rem;">
           <div>
-            <span style="font-size: 0.6875rem; font-family: 'Space Mono', monospace; color: #5de3ca; font-weight: 700;">CHECKPOINT QUIZ</span>
-            <h2 style="font-size: 1.25rem; font-weight: 800; margin: 0.25rem 0 0 0;">Scenario-Based Knowledge Check</h2>
+            <span style="font-size: 0.7219rem; font-family: 'Space Mono', monospace; color: #5de3ca; font-weight: 700;">CHECKPOINT QUIZ</span>
+            <h2 style="font-size: 1.3125rem; font-weight: 800; margin: 0.25rem 0 0 0;">Scenario-Based Knowledge Check</h2>
           </div>
-          <span style="font-size: 0.75rem; color: #94A3B8;">Pass score: 70%+</span>
+          <span style="font-size: 0.7875rem; color: #94A3B8;">Pass score: 70%+</span>
         </div>
 
         <div style="display: flex; align-items: center; justify-content: center; gap: 0.75rem; margin-bottom: 2rem;" id="quiz-indicators">
           <?php foreach ($quizzes as $qIdx => $q): ?>
-            <div class="quiz-dot" id="quiz-dot-<?= $qIdx ?>" style="width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: <?= $qIdx === 0 ? '#5de3ca' : 'rgba(255,255,255,0.1)' ?>; color: <?= $qIdx === 0 ? '#111' : '#94A3B8' ?>; font-size: 0.75rem; font-weight: 700; transition: all 0.3s; cursor: pointer; box-shadow: <?= $qIdx === 0 ? '0 0 10px rgba(93,227,202,0.5)' : 'none' ?>;">
+            <div class="quiz-dot" id="quiz-dot-<?= $qIdx ?>" style="width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: <?= $qIdx === 0 ? '#5de3ca' : 'rgba(255,255,255,0.1)' ?>; color: <?= $qIdx === 0 ? '#111' : '#94A3B8' ?>; font-size: 0.7875rem; font-weight: 700; transition: all 0.3s; cursor: pointer; box-shadow: <?= $qIdx === 0 ? '0 0 10px rgba(93,227,202,0.5)' : 'none' ?>;">
               <?= $qIdx + 1 ?>
             </div>
           <?php endforeach; ?>
@@ -204,13 +204,13 @@ $userNote = '';
               $opts = $optionsByQid[$q['id']] ?? [];
             ?>
               <div id="quiz-question-<?= $qIdx ?>" style="display: <?= $qIdx === 0 ? 'block' : 'none' ?>; background: rgba(0, 0, 0, 0.3); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 0.75rem; padding: 1.5rem;">
-                <div style="font-size: 0.9375rem; font-weight: 700; color: #FFF; margin-bottom: 1.25rem; line-height: 1.5;">
+                <div style="font-size: 0.9844rem; font-weight: 700; color: #FFF; margin-bottom: 1.25rem; line-height: 1.5;">
                   <?= htmlspecialchars($q['scenario']) ?>
                 </div>
 
                 <div style="display: flex; flex-direction: column; gap: 0.5rem;">
                   <?php foreach ($opts as $opt): ?>
-                    <label style="display: flex; align-items: flex-start; gap: 0.75rem; padding: 0.875rem; border-radius: 0.5rem; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.05); cursor: pointer; font-size: 0.875rem; color: #CBD5E1; transition: background 0.2s;">
+                    <label style="display: flex; align-items: flex-start; gap: 0.75rem; padding: 0.875rem; border-radius: 0.5rem; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.05); cursor: pointer; font-size: 0.9188rem; color: #CBD5E1; transition: background 0.2s;">
                       <input type="radio" name="question_<?= (int)$q['id'] ?>" value="<?= (int)$opt['id'] ?>" required style="margin-top: 3px;">
                       <span><?= htmlspecialchars($opt['option_text']) ?></span>
                     </label>
@@ -221,18 +221,18 @@ $userNote = '';
           </div>
 
           <div style="margin-top: 2rem; display: flex; align-items: center; justify-content: space-between;">
-            <button type="button" id="quiz-btn-prev" onclick="prevQuestion()" style="padding: 0.75rem 1.5rem; font-size: 0.8125rem; font-weight: 700; color: #FFF; background: transparent; border: 1px solid rgba(255,255,255,0.2); border-radius: 0.5rem; cursor: pointer; visibility: hidden; transition: all 0.2s;">
+            <button type="button" id="quiz-btn-prev" onclick="prevQuestion()" style="padding: 0.75rem 1.5rem; font-size: 0.8531rem; font-weight: 700; color: #FFF; background: transparent; border: 1px solid rgba(255,255,255,0.2); border-radius: 0.5rem; cursor: pointer; visibility: hidden; transition: all 0.2s;">
               <i data-lucide="arrow-left" style="width: 14px; height: 14px; display: inline-block; vertical-align: middle; margin-right: 4px;"></i> Previous
             </button>
             
-            <div id="quiz-result" style="font-size: 0.875rem; font-weight: 700;"></div>
+            <div id="quiz-result" style="font-size: 0.9188rem; font-weight: 700;"></div>
             
             <?php if (count($quizzes) > 1): ?>
-            <button type="button" id="quiz-btn-next" onclick="nextQuestion()" style="padding: 0.75rem 1.5rem; font-size: 0.8125rem; font-weight: 700; color: #FFF; background: #8d7aff; border: none; border-radius: 0.5rem; cursor: pointer; box-shadow: 0 4px 12px rgba(141, 122, 255, 0.3); transition: all 0.2s;">
+            <button type="button" id="quiz-btn-next" onclick="nextQuestion()" style="padding: 0.75rem 1.5rem; font-size: 0.8531rem; font-weight: 700; color: #FFF; background: #8d7aff; border: none; border-radius: 0.5rem; cursor: pointer; box-shadow: 0 4px 12px rgba(141, 122, 255, 0.3); transition: all 0.2s;">
               Next <i data-lucide="arrow-right" style="width: 14px; height: 14px; display: inline-block; vertical-align: middle; margin-left: 4px;"></i>
             </button>
             <?php else: ?>
-            <button type="submit" id="quiz-btn-next" style="padding: 0.75rem 2rem; font-size: 0.8125rem; font-weight: 700; color: #111; background: #5de3ca; border: none; border-radius: 0.5rem; cursor: pointer; box-shadow: 0 4px 12px rgba(93, 227, 202, 0.3); transition: all 0.2s;">
+            <button type="submit" id="quiz-btn-next" style="padding: 0.75rem 2rem; font-size: 0.8531rem; font-weight: 700; color: #111; background: #5de3ca; border: none; border-radius: 0.5rem; cursor: pointer; box-shadow: 0 4px 12px rgba(93, 227, 202, 0.3); transition: all 0.2s;">
               Submit Answers & Claim XP
             </button>
             <?php endif; ?>
@@ -244,16 +244,16 @@ $userNote = '';
     <!-- STUDENT PERSONAL NOTES SCRATCHPAD -->
     <div style="background: #14142b; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 1rem; padding: 1.5rem; margin-top: 2rem; margin-bottom: 0;">
       <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem;">
-        <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.875rem; font-weight: 700; color: #FFF;">
+        <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9188rem; font-weight: 700; color: #FFF;">
           <i data-lucide="edit-3" style="width: 1rem; height: 1rem; color: #F59E0B;"></i>
           <span>Personal Study Notes</span>
         </div>
-        <span id="note-saved-status" style="font-size: 0.6875rem; color: #5de3ca; display: none;">Saved!</span>
+        <span id="note-saved-status" style="font-size: 0.7219rem; color: #5de3ca; display: none;">Saved!</span>
       </div>
       
       <div style="position: relative;">
-        <textarea id="student-notes" placeholder="Jot down notes, questions, or key takeaways for this lesson..." style="width: 100%; box-sizing: border-box; height: 6rem; background: #080914; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 0.5rem; padding: 0.75rem; padding-bottom: 3rem; color: #E2E8F0; font-size: 0.875rem; resize: vertical;"></textarea>
-        <button onclick="saveNote(<?= (int)$lesson['id'] ?>)" style="position: absolute; bottom: 0.75rem; right: 0.75rem; padding: 0.4rem 1rem; font-size: 0.75rem; font-weight: 700; color: #111; background: #5de3ca; border: none; border-radius: 0.375rem; cursor: pointer; box-shadow: 0 2px 8px rgba(93, 227, 202, 0.3); transition: all 0.2s;">
+        <textarea id="student-notes" placeholder="Jot down notes, questions, or key takeaways for this lesson..." style="width: 100%; box-sizing: border-box; height: 6rem; background: #080914; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 0.5rem; padding: 0.75rem; padding-bottom: 3rem; color: #E2E8F0; font-size: 0.9188rem; resize: vertical;"></textarea>
+        <button onclick="saveNote(<?= (int)$lesson['id'] ?>)" style="position: absolute; bottom: 0.75rem; right: 0.75rem; padding: 0.4rem 1rem; font-size: 0.7875rem; font-weight: 700; color: #111; background: #5de3ca; border: none; border-radius: 0.375rem; cursor: pointer; box-shadow: 0 2px 8px rgba(93, 227, 202, 0.3); transition: all 0.2s;">
           Save Note
         </button>
       </div>
@@ -262,8 +262,8 @@ $userNote = '';
       <div id="notes-history-container" style="margin-top: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
         <?php foreach ($savedNotes as $note): ?>
           <div class="saved-note-item" style="background: rgba(255,255,255,0.03); border-left: 2px solid #8d7aff; padding: 1rem; border-radius: 0 0.5rem 0.5rem 0;">
-            <div style="font-size: 0.9375rem; color: #E2E8F0; line-height: 1.6; margin-bottom: 0.5rem; white-space: pre-wrap;"><?= htmlspecialchars($note['note_text']) ?></div>
-            <div style="font-size: 0.6875rem; color: #64748B; font-family: 'Space Mono', monospace;"><?= date('M j, Y, g:i a', strtotime($note['updated_at'])) ?></div>
+            <div style="font-size: 0.9844rem; color: #E2E8F0; line-height: 1.6; margin-bottom: 0.5rem; white-space: pre-wrap;"><?= htmlspecialchars($note['note_text']) ?></div>
+            <div style="font-size: 0.7219rem; color: #64748B; font-family: 'Space Mono', monospace;"><?= date('M j, Y, g:i a', strtotime($note['updated_at'])) ?></div>
           </div>
         <?php endforeach; ?>
       </div>
@@ -331,8 +331,8 @@ $userNote = '';
             newNote.className = 'saved-note-item';
             newNote.style = 'background: rgba(255,255,255,0.03); border-left: 2px solid #8d7aff; padding: 1rem; border-radius: 0 0.5rem 0.5rem 0; margin-bottom: 1rem;';
             newNote.innerHTML = `
-                <div style="font-size: 0.9375rem; color: #E2E8F0; line-height: 1.6; margin-bottom: 0.5rem; white-space: pre-wrap;">${text.replace(/</g, "&lt;").replace(/>/g, "&gt;")}</div>
-                <div style="font-size: 0.6875rem; color: #64748B; font-family: 'Space Mono', monospace;">${data.timestamp}</div>
+                <div style="font-size: 0.9844rem; color: #E2E8F0; line-height: 1.6; margin-bottom: 0.5rem; white-space: pre-wrap;">${text.replace(/</g, "&lt;").replace(/>/g, "&gt;")}</div>
+                <div style="font-size: 0.7219rem; color: #64748B; font-family: 'Space Mono', monospace;">${data.timestamp}</div>
             `;
             historyContainer.insertBefore(newNote, historyContainer.firstChild);
             textInput.value = ''; // clear input

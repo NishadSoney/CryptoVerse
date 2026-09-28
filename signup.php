@@ -71,7 +71,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       <p class="auth-lede">Create an account and make the complex feel clear.</p>
 
       <?php if ($error): ?>
-        <div style="background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.3); color: #FCA5A5; padding: 10px; border-radius: 4px; font-size: 11px; margin-bottom: 20px;">
+        <div style="background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.3); color: #FCA5A5; padding: 10px; border-radius: 4px; font-size: 12px; margin-bottom: 20px;">
           <?= htmlspecialchars($error) ?>
         </div>
       <?php endif; ?>

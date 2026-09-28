@@ -244,7 +244,7 @@ require_once __DIR__ . '/includes/header.php';
         <button type="submit" id="btn-submit-order" class="place-order buy">
           Buy <?= $preselectedAsset ?> <i data-lucide="arrow-up" style="width: 15px; height: 15px;"></i>
         </button>
-        <div id="trade-result-msg" style="margin-top: 0.75rem; text-align: center; font-size: 0.8125rem; font-weight: 700;"></div>
+        <div id="trade-result-msg" style="margin-top: 0.75rem; text-align: center; font-size: 0.8531rem; font-weight: 700;"></div>
 
         <p class="order-note">
           <i data-lucide="info" style="width: 13px; height: 13px;"></i> 
@@ -313,7 +313,7 @@ require_once __DIR__ . '/includes/header.php';
       <span></span>
     </div>
     <?php if (empty($holdings)): ?>
-      <div style="padding: 20px; color: #77758a; text-align: center; font-size: 11px;">No assets held.</div>
+      <div style="padding: 20px; color: #77758a; text-align: center; font-size: 12px;">No assets held.</div>
     <?php else: ?>
       <?php foreach ($holdings as $h): 
         $sym = $h['asset_symbol'];
@@ -326,7 +326,7 @@ require_once __DIR__ . '/includes/header.php';
       ?>
       <div class="asset-row">
         <div class="asset-cell">
-          <span class="market-coin" style="background:#3b3857; color:#fff; font-size:9px;"><?= substr($sym, 0, 1) ?></span>
+          <span class="market-coin" style="background:#3b3857; color:#fff; font-size: 9px;"><?= substr($sym, 0, 1) ?></span>
           <div>
             <strong><?= htmlspecialchars($sym) ?></strong>
             <small><?= htmlspecialchars($sym) ?></small>
@@ -364,7 +364,7 @@ require_once __DIR__ . '/includes/header.php';
       <span>Status</span>
     </div>
     <?php if (empty($trades)): ?>
-      <div style="padding: 20px; color: #77758a; text-align: center; font-size: 11px;">No recorded trades yet.</div>
+      <div style="padding: 20px; color: #77758a; text-align: center; font-size: 12px;">No recorded trades yet.</div>
     <?php else: ?>
       <?php foreach ($trades as $trade): ?>
       <div class="recent-row">
