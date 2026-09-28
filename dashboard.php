@@ -215,18 +215,7 @@ if ($xp > 0) {
               </div>
             </div>
 
-            <?php if (count($completedLessons) > 1): ?>
-              <div style="font-size: 12px; font-weight: 700; color: #777489; letter-spacing: 1px; text-transform: uppercase; margin: 20px 0 10px 0;">Previous Lessons</div>
-              <?php for($i = 1; $i < count($completedLessons); $i++): $cl = $completedLessons[$i]; ?>
-              <div class="lesson-row" style="align-items: start; gap: 14px;">
-                <span class="lesson-number" style="margin-top: 2px;"><i data-lucide="check" style="width: 14px; height: 14px; color: var(--mint);"></i></span>
-                <div class="lesson-row-copy">
-                  <strong><?= htmlspecialchars($cl['title']) ?></strong>
-                  <span style="line-height: 1.5; margin-top: 4px;"><?= htmlspecialchars($cl['key_takeaway']) ?></span>
-                </div>
-              </div>
-              <?php endfor; ?>
-            <?php endif; ?>
+
           <?php endif; ?>
           
           <?php if (!empty($randomTerm)): ?>
@@ -257,10 +246,11 @@ if ($xp > 0) {
             <span class="section-kicker" style="margin:0;">CURRENT MARKET NEWS</span>
           </div>
         </div>
-        
-        <div class="news-scroller" id="dashboard-news-list">
-          <div style="padding: 20px; text-align: center; color: #838091; font-size: 12px;">
-            <i data-lucide="loader-2" class="spin" style="margin-bottom: 10px;"></i><br/>Loading latest news...
+        <div style="flex-grow: 1; position: relative; min-height: 0; display: flex; flex-direction: column;">
+          <div class="news-scroller" id="dashboard-news-list" style="position: absolute; inset: 0; margin-bottom: 15px;">
+            <div style="padding: 20px; text-align: center; color: #838091; font-size: 12px;">
+              <i data-lucide="loader-2" class="spin" style="margin-bottom: 10px;"></i><br/>Loading latest news...
+            </div>
           </div>
         </div>
         

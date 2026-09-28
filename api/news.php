@@ -90,8 +90,8 @@ usort($articles, function($a, $b) {
     return $b['time_raw'] <=> $a['time_raw'];
 });
 
-// Take top 6 overall
-$articles = array_slice($articles, 0, 6);
+// Take top 8 overall to ensure the panel is always full
+$articles = array_slice($articles, 0, 8);
 
 // Format relative time strings
 foreach ($articles as &$art) {

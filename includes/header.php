@@ -43,6 +43,14 @@ try {
 $avatar_initial = strtoupper(substr($name, 0, 1));
 $current_date_str = strtoupper(date('l, F j, Y'));
 
+$hour = (int)date('G');
+if ($hour >= 5 && $hour < 12) {
+    $greeting = "Good morning";
+} elseif ($hour >= 12 && $hour < 17) {
+    $greeting = "Good afternoon";
+} else {
+    $greeting = "Good evening";
+}
 if (!isset($active_page)) {
     $active_page = 'home';
 }
@@ -185,7 +193,7 @@ if (!isset($active_page)) {
     <div class="dashboard-welcome">
       <div>
         <div class="section-kicker"><?= $current_date_str ?></div>
-        <h1>Good morning, <em><?= htmlspecialchars($name) ?>.</em></h1>
+        <h1><?= $greeting ?>, <em><?= htmlspecialchars($name) ?>.</em></h1>
         <p>Keep your momentum going. You are building a better mental model one lesson at a time.</p>
       </div>
       <div style="display:flex; gap: 10px;">
