@@ -82,11 +82,13 @@ class CryptoUniverseScene {
     ctx.strokeStyle = '#ffffff';
     ctx.stroke();
 
-    ctx.font = 'bold 64px Arial';
+    const fontSize = text.length > 1 ? 40 : 64;
+    const yOffset = text.length > 1 ? 66 : 68;
+    ctx.font = `bold ${fontSize}px Arial`;
     ctx.fillStyle = textColor;
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
-    ctx.fillText(text, 64, 68);
+    ctx.fillText(text, 64, yOffset);
 
     const texture = new THREE.CanvasTexture(canvas);
     texture.minFilter = THREE.LinearMipmapLinearFilter;
