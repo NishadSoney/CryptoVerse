@@ -1,6 +1,32 @@
 # CryptoVerse — Educational Cryptocurrency & Blockchain Platform
 
-CryptoVerse is an educational cryptocurrency and blockchain web platform designed for beginners and advanced learners. It combines guided curriculum, interactive 3D elements, live market discovery, and a risk-free $100,000 USD virtual paper trading simulator.
+## 📖 Introduction
+
+Welcome to **CryptoVerse**, a comprehensive educational platform built to demystify the complex world of cryptocurrency and blockchain technology. 
+
+Designed for both absolute beginners and advanced learners, CryptoVerse provides a safe, interactive, and engaging environment to learn about digital assets without any financial risk. Whether you are looking to understand the fundamental mechanics of blockchain, learn how to analyze cryptocurrency markets, or practice trading with a virtual portfolio, this platform has everything you need.
+
+Our mission is to bridge the knowledge gap in the Web3 space by combining guided theoretical lessons with hands-on, practical tools. By offering interactive cryptographic labs and a real-time simulated trading environment, we empower users to confidently navigate the decentralized economy.
+## 💡 Core Features & Innovations
+
+### 1. Interactive 3D Blockchain Protocol Labs
+- **Live Cryptographic Hashing**: Visual playground using browser-native `crypto.subtle` SHA-256 hashing. Watch hashes update instantly character-by-character.
+- **Blockchain Linkage & Tamper Simulator**: Chain 3 sequential blocks together. Mutate Block #1 and observe the cryptographic chain break in real-time as subsequent block hashes become invalid.
+- **Asymmetric Cryptography Lab**: Generate public/private key pairs and digitally sign transactions to understand how non-custodial ownership works.
+
+### 2. Guided 15-Lesson Dual-Mode Curriculum
+- Dual explanations: **Simple (Plain English)** for newcomers and **Technical (Protocol Specs)** for developers.
+- Knowledge check quizzes with instant grading, XP rewards, and level progression.
+- Personal study notes synchronized per lesson.
+
+### 3. Market Discovery with Plain-English Translations
+- **Anti-Unit-Bias Guidance**: Explains why token price alone does not reflect true valuation, emphasizing Market Capitalization.
+- **Simple vs. Advanced Toggle**: View plain-English fundamentals or flip to technical volume, high/low spread, and consensus metrics.
+
+### 4. Risk-Free $100,000 Paper Trading Simulator
+- Execute simulated **BUY** and **SELL** orders with live portfolio balance and holdings valuation.
+- **1% Golden Rule Risk Calculator**: Calculates optimal position sizing given an entry and stop-loss level, preventing catastrophic drawdown.
+- Transaction history audit ledger and 1-click sandbox reset.
 
 ---
 
