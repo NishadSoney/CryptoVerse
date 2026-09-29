@@ -403,7 +403,15 @@ INSERT INTO `lessons` (`id`, `module_id`, `slug`, `title`, `summary`, `simple_ex
  'Decentralized Finance (DeFi) is a collection of financial tools—like loans, interest-earning accounts, and trading desks—built with autonomous computer code (smart contracts) on blockchains like Ethereum. There are no corporate boardrooms, branches, or paperwork required.',
  'Traditional finance is like a bank with marble pillars, bankers, and paper applications that takes three business days to approve a loan. DeFi is like an automated bank run entirely by unbreakable vending machine software operating 24/7/365.',
  'DeFi protocols leverage composable smart contracts to create non-custodial automated protocols: Lending pools (e.g., Aave) relying on collateral ratios, AMMs (e.g., Uniswap) managing liquidity pools, and decentralized stablecoins (e.g., DAI) maintaining dollar pegs through collateralization.',
- 'DeFi eliminates intermediary rent-seeking, but introduces smart contract code vulnerability risks.', 50, 6, 15);
+ 'DeFi eliminates intermediary rent-seeking, but introduces smart contract code vulnerability risks.', 50, 6, 15),
+
+-- 16. Reading Market Graphs & Trading
+(16, 3, 'market-graph-trading', 'Reading Market Graphs & Trading',
+ 'Learn how to combine various chart indicators to make informed and calculated trading decisions.',
+ 'Once you understand candlesticks, support/resistance, and momentum indicators like RSI, you can put them all together. When multiple signals align, you have a high-probability setup for a trade. Taking a trade based on data instead of emotion is what separates a professional from a gambler.',
+ 'Imagine you are a detective trying to solve a case. A single clue (like a fingerprint) is helpful, but finding a fingerprint, a motive, and an alibi all pointing to the same suspect gives you a solid case. In trading, using multiple indicators is like gathering multiple clues before making your move.',
+ 'Confluence trading involves overlaying price action patterns, horizontal support/resistance zones, and momentum oscillators. When an asset approaches a major support zone (demand area) concurrently with a bullish divergence on the RSI and prints a bullish engulfing candlestick, the probabilistic edge is skewed heavily in favor of a long position. Entry triggers should always be accompanied by a predefined invalidation level (stop loss).',
+ 'Always look for confluence—multiple technical signals agreeing—before executing a trade.', 60, 7, 16);
 
 -- ============================================================
 -- SEED DATA: QUIZZES & QUESTIONS FOR LESSONS

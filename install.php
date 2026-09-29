@@ -22,10 +22,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
 
     try {
         // Connect to MySQL server (without selecting DB first in case it doesn't exist)
-        $pdo = new PDO("mysql:host={$host};port={$port};charset=utf8mb4", $user, $pass, [
+        $options = [
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
             PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-        ]);
+        ];
+        if (defined('PDO::MYSQL_ATTR_MULTI_STATEMENTS')) {
+            $options[PDO::MYSQL_ATTR_MULTI_STATEMENTS] = true;
+        }
+        $pdo = new PDO("mysql:host={$host};port={$port};charset=utf8mb4", $user, $pass, $options);
 
         // Create Database if not exists
         $pdo->exec("CREATE DATABASE IF NOT EXISTS `{$dbName}` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;");
