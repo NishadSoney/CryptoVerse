@@ -17,6 +17,8 @@ USE `cryptoverse`;
 DROP TABLE IF EXISTS `user_achievements`;
 DROP TABLE IF EXISTS `challenge_results`;
 DROP TABLE IF EXISTS `quiz_results`;
+DROP TABLE IF EXISTS `user_notes`;
+DROP TABLE IF EXISTS `user_lesson_progress`;
 DROP TABLE IF EXISTS `user_progress`;
 DROP TABLE IF EXISTS `trades`;
 DROP TABLE IF EXISTS `wallet_assets`;
@@ -149,13 +151,26 @@ CREATE TABLE `lessons` (
   FOREIGN KEY (`module_id`) REFERENCES `modules`(`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-CREATE TABLE `user_progress` (
+CREATE TABLE `user_lesson_progress` (
   `id` INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
   `user_id` INT UNSIGNED NOT NULL,
   `lesson_id` INT UNSIGNED NOT NULL,
-  `status` ENUM('LOCKED', 'AVAILABLE', 'IN_PROGRESS', 'COMPLETED') DEFAULT 'AVAILABLE',
+  `completed` TINYINT(1) DEFAULT 0,
+  `score` INT UNSIGNED DEFAULT 0,
   `completed_at` DATETIME NULL,
   UNIQUE KEY `uk_user_lesson` (`user_id`, `lesson_id`),
+  FOREIGN KEY (`user_id`) REFERENCES `users`(`id`) ON DELETE CASCADE,
+  FOREIGN KEY (`lesson_id`) REFERENCES `lessons`(`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE `user_notes` (
+  `id` INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  `user_id` INT UNSIGNED NOT NULL,
+  `lesson_id` INT UNSIGNED NOT NULL,
+  `note_text` TEXT NOT NULL,
+  `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  INDEX `idx_user_lesson_notes` (`user_id`, `lesson_id`),
   FOREIGN KEY (`user_id`) REFERENCES `users`(`id`) ON DELETE CASCADE,
   FOREIGN KEY (`lesson_id`) REFERENCES `lessons`(`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;

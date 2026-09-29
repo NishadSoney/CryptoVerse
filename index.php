@@ -41,12 +41,15 @@
     .reveal-on-scroll {
       opacity: 0;
       transform: translateY(30px);
-      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease !important;
       will-change: opacity, transform;
     }
     .reveal-on-scroll.is-visible {
       opacity: 1;
       transform: translateY(0);
+    }
+    .reveal-on-scroll.is-visible:hover {
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), border-color 0.3s ease, box-shadow 0.3s ease !important;
     }
     .stagger-1 { transition-delay: 0.1s; }
     .stagger-2 { transition-delay: 0.2s; }
