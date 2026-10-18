@@ -193,7 +193,7 @@ function renderPractice({
       <div class="section-kicker">YOUR SIMULATED PORTFOLIO</div>
       <h2>Holdings & performance</h2>
     </div>
-    <a href="markets.php">View markets <i data-lucide="arrow-up" style="width: 14px; height: 14px;"></i></a>
+    <a href="/markets">View markets <i data-lucide="arrow-up" style="width: 14px; height: 14px;"></i></a>
   </div>
   
   <div class="portfolio-overview">
@@ -695,7 +695,7 @@ function renderPractice({
     msgDiv.innerHTML = '<span style="color: #b6adff;">Executing...</span>';
 
     try {
-      const res = await fetch('api/trade_execute.php', { method: 'POST', body: formData });
+      const res = await fetch('/api/trade', { method: 'POST', body: formData });
       const data = await res.json();
       if (data.success) {
         msgDiv.innerHTML = \`<span style="color: #5de3ca;">✓ \${data.message}</span>\`;
@@ -711,7 +711,7 @@ function renderPractice({
   async function resetSandbox() {
     if (!confirm('Reset your paper wallet back to $100,000 USD? All virtual positions will be liquidated.')) return;
     try {
-      const res = await fetch('api/wallet_reset.php', { method: 'POST' });
+      const res = await fetch('/api/wallet-reset', { method: 'POST' });
       const data = await res.json();
       if (data.success) location.reload();
     } catch (e) {

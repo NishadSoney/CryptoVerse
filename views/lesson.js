@@ -54,7 +54,7 @@ function renderLesson({
   <!-- TOP APP BAR -->
   <header style="border-bottom: 1px solid rgba(255, 255, 255, 0.08); background: #101027; padding: 0.75rem 1.5rem; position: sticky; top: 0; z-index: 40;">
     <div style="max-width: 96rem; margin: 0 auto; display: flex; align-items: center; justify-content: space-between;">
-      <a href="learn.php" style="display: flex; align-items: center; gap: 0.5rem; text-decoration: none; color: #94A3B8; font-size: 0.8531rem; font-weight: 600;">
+      <a href="/learn" style="display: flex; align-items: center; gap: 0.5rem; text-decoration: none; color: #94A3B8; font-size: 0.8531rem; font-weight: 600;">
         <i data-lucide="arrow-left" style="width: 1rem; height: 1rem;"></i>
         <span>Back to Curriculum</span>
       </a>
@@ -280,7 +280,7 @@ function renderLesson({
         formData.append('note_text', text);
 
         try {
-          const res = await fetch('api/notes.php', { method: 'POST', body: formData });
+          const res = await fetch('/api/notes', { method: 'POST', body: formData });
           const data = await res.json();
           if (res.ok && data.success) {
             const status = document.getElementById('note-saved-status');
@@ -314,7 +314,7 @@ function renderLesson({
         formData.append('note_text', text);
 
         try {
-          const res = await fetch('api/notes.php', { method: 'POST', body: formData });
+          const res = await fetch('/api/notes', { method: 'POST', body: formData });
           if (res.ok) {
             const status = document.getElementById('note-saved-status');
             status.style.display = 'inline';
@@ -400,14 +400,14 @@ function renderLesson({
       formData.append('lesson_id', lessonId);
 
       try {
-        const res = await fetch('api/quiz_submit.php', { method: 'POST', body: formData });
+        const res = await fetch('/api/quiz-submit', { method: 'POST', body: formData });
         const data = await res.json();
         const resultDiv = document.getElementById('quiz-result');
 
         if (data.success) {
           resultDiv.innerHTML = \`<span style="color: #5de3ca;">✓ Passed! Score: \${data.score}% (+\${data.xp_awarded} XP)</span>\`;
           setTimeout(() => {
-            window.location.href = 'learn.php';
+            window.location.href = '/learn';
           }, 1800);
         } else {
           resultDiv.innerHTML = \`<span style="color: #EF4444;">Score: \${data.score}%. Need 70% to pass. Try again!</span>\`;

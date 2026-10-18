@@ -15,7 +15,7 @@ function renderSignup({ error = '', name = '', username = '', email = '' } = {})
 <main class="auth-shell">
   <!-- Left Side: Graphic / Copy -->
   <div class="auth-aside">
-    <a href="index.php" class="brand"><span class="brand-mark">C</span><span>CRYPTOVERSE</span></a>
+    <a href="/" class="brand"><span class="brand-mark">C</span><span>CRYPTOVERSE</span></a>
     <div class="auth-aside-copy">
       <div class="eyebrow"><span class="eyebrow-dot"></span> LEARN WITHOUT THE NOISE</div>
       <h1>Make sense of<br /><em>what moves</em><br />the world.</h1>
@@ -28,7 +28,7 @@ function renderSignup({ error = '', name = '', username = '', email = '' } = {})
   <!-- Right Side: Signup Panel -->
   <section class="auth-panel" aria-labelledby="auth-title">
     <div class="auth-panel-inner">
-      <a href="index.php" class="mobile-brand brand"><span class="brand-mark">C</span><span>CRYPTOVERSE</span></a>
+      <a href="/" class="mobile-brand brand"><span class="brand-mark">C</span><span>CRYPTOVERSE</span></a>
       <div class="auth-kicker"><i data-lucide="lock-keyhole" style="width: 15px; height: 15px;"></i> PRIVATE LEARNING SPACE</div>
       <h2 id="auth-title">Start your journey.</h2>
       <p class="auth-lede">Create an account and make the complex feel clear.</p>
@@ -39,7 +39,7 @@ function renderSignup({ error = '', name = '', username = '', email = '' } = {})
         </div>
       ` : ''}
 
-      <form class="auth-form" method="POST" action="signup.php">
+      <form class="auth-form" method="POST" action="/signup">
         <label>Full Name
           <input name="name" type="text" placeholder="Your name" required value="${escapeHtml(name)}" />
         </label>
@@ -73,7 +73,7 @@ function renderSignup({ error = '', name = '', username = '', email = '' } = {})
         <button class="button auth-submit" type="submit">Create account <i data-lucide="arrow-right" style="width: 17px; height: 17px;"></i></button>
       </form>
       
-      <p class="auth-switch">Already learning with us? <a href="login.php">Log in</a></p>
+      <p class="auth-switch">Already learning with us? <a href="/login">Log in</a></p>
       <p class="auth-legal">By continuing, you agree to our Terms and acknowledge our Privacy Policy.</p>
     </div>
   </section>

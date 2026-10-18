@@ -73,7 +73,7 @@ function renderDashboard({
               <i data-lucide="clock-3" style="width: 14px; height: 14px;"></i> ${escapeHtml(lesson_time)}
             </div>
           </div>
-          <a href="learn.php" class="button button-small">Continue <i data-lucide="arrow-right" style="width: 15px; height: 15px;"></i></a>
+          <a href="/learn" class="button button-small">Continue <i data-lucide="arrow-right" style="width: 15px; height: 15px;"></i></a>
         </div>
       </article>
 
@@ -254,7 +254,7 @@ function renderDashboard({
           </div>
         </div>
         
-        <a href="markets.php" class="button" style="width: 100%; margin-top: 15px; justify-content: center; background: linear-gradient(90deg, #8d7aff, var(--mint)); color: #111; font-weight: 600;">View all market news <i data-lucide="arrow-right" style="width: 15px; height: 15px;"></i></a>
+        <a href="/markets" class="button" style="width: 100%; margin-top: 15px; justify-content: center; background: linear-gradient(90deg, #8d7aff, var(--mint)); color: #111; font-weight: 600;">View all market news <i data-lucide="arrow-right" style="width: 15px; height: 15px;"></i></a>
       </aside>
     </section>
 

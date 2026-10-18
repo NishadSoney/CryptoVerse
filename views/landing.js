@@ -78,8 +78,8 @@ function renderLanding() {
     </a>
 
     <div class="nav-actions">
-      <a href="login.php" class="nav-login">Log in</a>
-      <a href="signup.php" class="button button-small">Get started <i data-lucide="arrow-right" style="width: 15px; height: 15px;"></i></a>
+      <a href="/login" class="nav-login">Log in</a>
+      <a href="/signup" class="button button-small">Get started <i data-lucide="arrow-right" style="width: 15px; height: 15px;"></i></a>
     </div>
   </nav>
 
@@ -90,7 +90,7 @@ function renderLanding() {
       <p class="hero-subtitle">Learn how cryptocurrency works, explore live markets, and build trading confidence using virtual money.</p>
       
       <div class="hero-actions">
-        <a id="start" href="signup.php" class="button">Start learning <i data-lucide="arrow-right" style="width: 17px; height: 17px;"></i></a>
+        <a id="start" href="/signup" class="button">Start learning <i data-lucide="arrow-right" style="width: 17px; height: 17px;"></i></a>
         <a href="#journey" class="text-link">Explore the journey <i data-lucide="chevron-down" style="width: 16px; height: 16px;"></i></a>
       </div>
       
@@ -124,21 +124,21 @@ function renderLanding() {
         <div class="feature-eyebrow">01 / LEARN</div>
         <h3>Start with the why.</h3>
         <p>Build a clear mental model of crypto, from money and wallets to blockchains and smart contracts.</p>
-        <a href="signup.php" aria-label="Learn about Start with the why.">Learn more <i data-lucide="arrow-right" style="width: 15px; height: 15px;"></i></a>
+        <a href="/signup" aria-label="Learn about Start with the why.">Learn more <i data-lucide="arrow-right" style="width: 15px; height: 15px;"></i></a>
       </article>
       <article class="feature-card reveal-on-scroll stagger-2">
         <div class="feature-icon"><i data-lucide="bar-chart-3" style="width: 19px; height: 19px;"></i></div>
         <div class="feature-eyebrow">02 / EXPLORE</div>
         <h3>See the bigger picture.</h3>
         <p>Explore live market context without the noise. Learn what price, volume, and volatility actually mean.</p>
-        <a href="signup.php" aria-label="Learn about See the bigger picture.">Learn more <i data-lucide="arrow-right" style="width: 15px; height: 15px;"></i></a>
+        <a href="/signup" aria-label="Learn about See the bigger picture.">Learn more <i data-lucide="arrow-right" style="width: 15px; height: 15px;"></i></a>
       </article>
       <article class="feature-card reveal-on-scroll stagger-3">
         <div class="feature-icon"><i data-lucide="wallet-cards" style="width: 19px; height: 19px;"></i></div>
         <div class="feature-eyebrow">03 / PRACTICE</div>
         <h3>Build confidence safely.</h3>
         <p>Test ideas with a virtual portfolio and learn from every decision before it costs anything.</p>
-        <a href="signup.php" aria-label="Learn about Build confidence safely.">Learn more <i data-lucide="arrow-right" style="width: 15px; height: 15px;"></i></a>
+        <a href="/signup" aria-label="Learn about Build confidence safely.">Learn more <i data-lucide="arrow-right" style="width: 15px; height: 15px;"></i></a>
       </article>
     </div>
   </section>
@@ -191,7 +191,7 @@ function renderLanding() {
       <div class="section-kicker">KNOWLEDGE IS PROTECTION</div>
       <h2>Learn how to<br /><span>spot the trap.</span></h2>
       <p>Crypto literacy is also knowing what to avoid. Practice recognizing common scams in a safe, simulated environment.</p>
-      <a href="signup.php" class="button button-outline">Visit Security Center <i data-lucide="arrow-right" style="width: 16px; height: 16px;"></i></a>
+      <a href="/signup" class="button button-outline">Visit Security Center <i data-lucide="arrow-right" style="width: 16px; height: 16px;"></i></a>
     </div>
     <div class="security-list">
       <div class="security-item reveal-on-scroll stagger-1"><span class="security-num">01</span><span>Phishing & impersonation</span><i data-lucide="check" style="width: 16px; height: 16px;"></i></div>
@@ -205,7 +205,7 @@ function renderLanding() {
     <i data-lucide="sparkles" style="width: 18px; height: 18px;"></i>
     <h2>Ready to enter<br /><span>the CryptoVerse?</span></h2>
     <p>Your first lesson is waiting. No wallet required.</p>
-    <a href="signup.php" class="button">Start learning <i data-lucide="arrow-right" style="width: 17px; height: 17px;"></i></a>
+    <a href="/signup" class="button">Start learning <i data-lucide="arrow-right" style="width: 17px; height: 17px;"></i></a>
   </section>
 
   <footer class="site-footer">

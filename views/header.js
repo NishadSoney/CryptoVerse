@@ -90,12 +90,12 @@ function renderHeader({
 <main class="${shellClass}">
   <!-- Top Navigation -->
   <header class="dashboard-nav">
-    <a href="dashboard.php" class="brand"><span class="brand-mark">C</span><span class="logo-text"><span class="large-letter">C</span>RYPTO<span class="large-letter">V</span>ERSE</span></a>
+    <a href="/dashboard" class="brand"><span class="brand-mark">C</span><span class="logo-text"><span class="large-letter">C</span>RYPTO<span class="large-letter">V</span>ERSE</span></a>
     <nav class="centered-nav">
-      <a class="${active_page === 'home' ? 'active' : ''}" href="dashboard.php">Home</a>
-      <a class="${active_page === 'learn' ? 'active' : ''}" href="learn.php">Learn</a>
-      <a class="${active_page === 'markets' ? 'active' : ''}" href="markets.php">Markets</a>
-      <a class="${active_page === 'trade' ? 'active' : ''}" href="practice.php">Trade</a>
+      <a class="${active_page === 'home' ? 'active' : ''}" href="/dashboard">Home</a>
+      <a class="${active_page === 'learn' ? 'active' : ''}" href="/learn">Learn</a>
+      <a class="${active_page === 'markets' ? 'active' : ''}" href="/markets">Markets</a>
+      <a class="${active_page === 'trade' ? 'active' : ''}" href="/practice">Trade</a>
     </nav>
     <div class="dashboard-user" id="user-menu-trigger" style="position: relative; cursor: pointer;">
       <span class="avatar">${escapeHtml(avatar_initial)}</span>
@@ -104,7 +104,7 @@ function renderHeader({
       
       <!-- Dropdown Menu -->
       <div id="user-dropdown-menu" style="display: none; position: absolute; top: 100%; right: 0; margin-top: 0.5rem; background: #131422; border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; width: 160px; z-index: 1000; box-shadow: 0 4px 12px rgba(0,0,0,0.5); padding: 0.5rem 0; flex-direction: column;">
-        <a href="profile.php" style="display: flex; align-items: center; gap: 8px; padding: 0.5rem 1rem; color: #fff; text-decoration: none; font-size: 0.9188rem;">
+        <a href="/profile" style="display: flex; align-items: center; gap: 8px; padding: 0.5rem 1rem; color: #fff; text-decoration: none; font-size: 0.9188rem;">
           <i data-lucide="user-round" style="width: 15px; height: 15px;"></i> Your Profile
         </a>
         <div style="height: 1px; background: rgba(255,255,255,0.1); margin: 0.25rem 0;"></div>
@@ -125,7 +125,7 @@ function renderHeader({
       <p style="color: #77758a; margin: 0 0 1.5rem; font-size: 0.9188rem; line-height: 1.5;">You will be safely logged out of your session. Your paper trading progress and lessons will be saved.</p>
       <div style="display: flex; gap: 1rem; justify-content: center;">
         <button onclick="hideLogoutModal()" style="padding: 0.625rem 1.25rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: transparent; color: #fff; font-weight: 600; cursor: pointer; flex: 1; transition: background 0.2s;">Cancel</button>
-        <button onclick="window.location.href='logout.php'" style="padding: 0.625rem 1.25rem; border-radius: 8px; border: none; background: #ef7f9b; color: #191525; font-weight: 700; cursor: pointer; flex: 1; transition: opacity 0.2s;">Sign Out</button>
+        <button onclick="window.location.href='/logout'" style="padding: 0.625rem 1.25rem; border-radius: 8px; border: none; background: #ef7f9b; color: #191525; font-weight: 700; cursor: pointer; flex: 1; transition: opacity 0.2s;">Sign Out</button>
       </div>
     </div>
   </div>

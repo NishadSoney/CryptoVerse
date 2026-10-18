@@ -15,7 +15,7 @@ function renderLogin({ error = '', email = '' } = {}) {
 <main class="auth-shell">
   <!-- Left Side: Graphic / Copy -->
   <div class="auth-aside">
-    <a href="index.php" class="brand"><span class="brand-mark">C</span><span>CRYPTOVERSE</span></a>
+    <a href="/" class="brand"><span class="brand-mark">C</span><span>CRYPTOVERSE</span></a>
     <div class="auth-aside-copy">
       <div class="eyebrow"><span class="eyebrow-dot"></span> LEARN WITHOUT THE NOISE</div>
       <h1>Make sense of<br /><em>what moves</em><br />the world.</h1>
@@ -28,7 +28,7 @@ function renderLogin({ error = '', email = '' } = {}) {
   <!-- Right Side: Login Panel -->
   <section class="auth-panel" aria-labelledby="auth-title">
     <div class="auth-panel-inner">
-      <a href="index.php" class="mobile-brand brand"><span class="brand-mark">C</span><span>CRYPTOVERSE</span></a>
+      <a href="/" class="mobile-brand brand"><span class="brand-mark">C</span><span>CRYPTOVERSE</span></a>
       <div class="auth-kicker"><i data-lucide="lock-keyhole" style="width: 15px; height: 15px;"></i> PRIVATE LEARNING SPACE</div>
       <h2 id="auth-title">Welcome back.</h2>
       <p class="auth-lede">Pick up where you left off.</p>
@@ -39,7 +39,7 @@ function renderLogin({ error = '', email = '' } = {}) {
         </div>
       ` : ''}
 
-      <form class="auth-form" method="POST" action="login.php">
+      <form class="auth-form" method="POST" action="/login">
         <label>Email address
           <input name="email" type="email" placeholder="you@example.com" required value="${escapeHtml(email)}" />
         </label>
@@ -61,7 +61,7 @@ function renderLogin({ error = '', email = '' } = {}) {
         <button class="button auth-submit" type="submit">Log in <i data-lucide="arrow-right" style="width: 17px; height: 17px;"></i></button>
       </form>
       
-      <p class="auth-switch">New to CryptoVerse? <a href="signup.php">Create an account</a></p>
+      <p class="auth-switch">New to CryptoVerse? <a href="/signup">Create an account</a></p>
       <p class="auth-legal">By continuing, you agree to our Terms and acknowledge our Privacy Policy.</p>
     </div>
   </section>

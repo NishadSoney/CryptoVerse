@@ -63,7 +63,7 @@ function renderLearn({
   return `${headerHtml}
 
     <div class="lessons-content">
-      <a href="dashboard.php" class="back-link"><i data-lucide="arrow-left" style="width: 14px; height: 14px;"></i> Back to overview</a>
+      <a href="/dashboard" class="back-link"><i data-lucide="arrow-left" style="width: 14px; height: 14px;"></i> Back to overview</a>
       
       <section class="lessons-hero">
         <div>
@@ -103,7 +103,7 @@ function renderLearn({
               color = '#111';
               shadow = '0 0 10px rgba(93,227,202,0.5)';
             }
-            const href = l.state !== 'locked' ? `lesson.php?id=${l.id}` : '#';
+            const href = l.state !== 'locked' ? `/lesson?id=${l.id}` : '#';
             const cursor = l.state !== 'locked' ? 'pointer' : 'default';
             const lineBg = l.state === 'complete' ? '#5de3ca' : 'rgba(255,255,255,0.1)';
             const hasNext = idx < allLessons.length - 1;
@@ -137,7 +137,7 @@ function renderLearn({
             <span><i data-lucide="clock-3" style="width: 14px; height: 14px;"></i> ${currentLesson.estimated_minutes} minutes</span>
             <span><i data-lucide="sparkles" style="width: 14px; height: 14px;"></i> ${currentLesson.xp_reward} XP</span>
           </div>
-          <a href="lesson.php?id=${currentLesson.id}" class="button" style="text-decoration: none; display: inline-flex;">
+          <a href="/lesson?id=${currentLesson.id}" class="button" style="text-decoration: none; display: inline-flex;">
             Continue lesson <i data-lucide="arrow-right" style="width: 15px; height: 15px; margin-left: 6px;"></i>
           </a>
         </div>
@@ -158,7 +158,7 @@ function renderLearn({
       <section class="lesson-grid">
         ${allLessons.map(l => {
           if (currentLesson && l.state === 'current' && l.id === currentLesson.id) return '';
-          const href = l.state !== 'locked' ? `lesson.php?id=${l.id}` : '#';
+          const href = l.state !== 'locked' ? `/lesson?id=${l.id}` : '#';
           let stateIcon = '<i data-lucide="book-open" style="width: 15px; height: 15px;"></i>';
           let footerStatus = '';
           if (l.state === 'complete') {

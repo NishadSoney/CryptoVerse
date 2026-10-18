@@ -16,7 +16,7 @@ async function initNewsFeed() {
   if (!newsContainer) return;
 
   try {
-    const res = await fetch('api/news.php');
+    const res = await fetch('/api/news');
     const data = await res.json();
     
     if (data.success && data.articles.length > 0) {

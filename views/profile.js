@@ -45,7 +45,7 @@ function renderProfile({
 <link rel="stylesheet" href="assets/css/profile.css">
 
 <div class="profile-content">
-  <a href="dashboard.php" style="display:flex; align-items:center; gap:6px; color:#898798; font-size: 13px; text-decoration:none; margin-bottom: 20px;">
+  <a href="/dashboard" style="display:flex; align-items:center; gap:6px; color:#898798; font-size: 13px; text-decoration:none; margin-bottom: 20px;">
     <i data-lucide="arrow-left" style="width: 14px; height: 14px;"></i> Back to dashboard
   </a>
   <div class="profile-heading">
@@ -94,7 +94,7 @@ function renderProfile({
         </div>
       </div>
       
-      <form id="profile-form" method="POST" action="profile.php" style="margin-top: 15px; margin-bottom: 25px;">
+      <form id="profile-form" method="POST" action="/profile" style="margin-top: 15px; margin-bottom: 25px;">
         <input type="hidden" name="action" value="update_profile">
         <div class="form-grid" style="gap: 20px;">
           <div style="display: flex; flex-direction: column;">
@@ -158,18 +158,18 @@ function renderProfile({
         <strong>$${formatNumber(estimatedTotal, 2, 2)}</strong>
       </div>
       <div class="funds-actions">
-        <a href="practice.php" style="text-decoration: none; padding: 6px 12px; background: rgba(255,255,255,0.1); color: #fff; border-radius: 4px; display: flex; align-items: center; gap: 6px; font-size: 11px;">
+        <a href="/practice" style="text-decoration: none; padding: 6px 12px; background: rgba(255,255,255,0.1); color: #fff; border-radius: 4px; display: flex; align-items: center; gap: 6px; font-size: 11px;">
           <i data-lucide="plus" style="width: 12px; height: 12px;"></i> Trade Assets
         </a>
         <button onclick="promptAddFunds()" style="border: none; padding: 6px 12px; background: rgba(93, 227, 202, 0.15); color: var(--mint); border-radius: 4px; display: flex; align-items: center; gap: 6px; font-size: 11px; cursor: pointer; font-family: inherit; font-weight: 600;">
           <i data-lucide="banknote" style="width: 12px; height: 12px;"></i> Add Funds
         </button>
-        <a href="export_history.php" target="_blank" style="text-decoration: none; padding: 6px 12px; border: 1px solid rgba(255,255,255,0.1); background: transparent; color: #fff; border-radius: 4px; display: flex; align-items: center; gap: 6px; font-size: 11px;">
+        <a href="/export-history" target="_blank" style="text-decoration: none; padding: 6px 12px; border: 1px solid rgba(255,255,255,0.1); background: transparent; color: #fff; border-radius: 4px; display: flex; align-items: center; gap: 6px; font-size: 11px;">
           <i data-lucide="download" style="width: 12px; height: 12px;"></i> Export history
         </a>
       </div>
       
-      <form id="add-funds-form" method="POST" action="profile.php" style="display: none;">
+      <form id="add-funds-form" method="POST" action="/profile" style="display: none;">
         <input type="hidden" name="action" value="add_funds">
         <input type="hidden" name="amount" id="add-funds-amount" value="0">
       </form>
@@ -251,7 +251,7 @@ function renderProfile({
             `;
         }).join('')}
       </div>
-      <a href="practice.php" class="text-action" style="text-decoration:none; margin-top:15px; display:inline-flex;">
+      <a href="/practice" class="text-action" style="text-decoration:none; margin-top:15px; display:inline-flex;">
         Manage portfolio <i data-lucide="chevron-right" style="width: 13px; height: 13px;"></i>
       </a>
     </section>
