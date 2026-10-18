@@ -35,40 +35,61 @@ Our mission is to bridge the knowledge gap in the Web3 space by combining guided
 
 ## 🏛️ Tech Stack
 
-CryptoVerse is built using a lightweight, native web stack with no complex build steps required:
+CryptoVerse supports both a modern standalone Node.js backend (recommended, zero-config) and the legacy WAMP stack:
 
-- **Frontend**: HTML5, Vanilla CSS, Vanilla JavaScript. We utilize **Three.js** for engaging 3D scenes and **IntersectionObserver** APIs for smooth, high-performance scroll reveal animations. **Lucide Icons** are used for modern, scalable iconography.
-- **Backend**: **PHP 8.0+**
-- **Database**: **MySQL 8.0+**
-- **Server Environment**: Designed optimally for **WAMP Server** (Windows), but fully compatible with LAMP or XAMPP stacks.
+- **Frontend**: HTML5, Vanilla CSS, Vanilla JavaScript. Built with **Three.js** for interactive 3D WebGL scenes, **IntersectionObserver** APIs for smooth scroll animations, **TradingView Lightweight Charts** for market visualization, and **Lucide Icons** for UI iconography. All frontend styles and scripts run natively in the browser without build tooling.
+- **Modern Backend (Active)**: **Node.js (v18+) & Express** with built-in SQLite (`node:sqlite`). Zero setup required — no external database server, no Apache, no WAMP needed.
+- **Legacy Backend (Optional)**: **PHP 8.0+** & **MySQL 8.0+** on Apache (WAMP/LAMP/XAMPP).
 
 ---
 
-## 🚀 Quick Start & WAMP Server Deployment
+## ⚡ Quick Start (Modern Standalone — Recommended)
 
-Follow these instructions to get CryptoVerse running locally using WAMP server.
+No Apache, WAMP, or MySQL installation required! The modern backend uses SQLite with all 20 tables and seed curriculum automatically pre-loaded.
+
+### 1. Install & Run
+```bash
+# Clone or navigate to the project folder
+cd CryptoVerse-WAMP_Version
+
+# Install dependencies (Express, bcryptjs, session, etc.)
+npm install
+
+# Start the server
+npm start
+```
+
+### 2. Access the Application
+Open your browser and navigate to:
+```
+http://localhost:3000
+```
+That's it! The database (`database/cryptoverse.db`) initializes automatically with all 16 curriculum lessons, interactive quizzes, glossary terms, and the pre-configured demo account.
+
+---
+
+## 🚀 Alternative: WAMP Server Deployment (Legacy PHP)
+
+If you prefer running with traditional WAMP Server (Windows, Apache, MySQL, PHP):
 
 ### 1. WAMP Installation & Setup
 1. Download and install [WampServer](https://www.wampserver.com/en/).
-2. Start WampServer. **Crucial:** Wait until the WAMP tray icon in your Windows taskbar turns **GREEN**. This indicates that both the Apache web server and the MySQL database server are running successfully. If it is orange or red, check for port conflicts (e.g., Skype or IIS using port 80).
+2. Start WampServer. Ensure the WAMP tray icon in your Windows taskbar turns **GREEN**.
 3. Copy the entire `cryptoverse` project folder into your WAMP web root directory:
    - `C:\wamp64\www\cryptoverse`
 
 ### 2. Database Setup via phpMyAdmin
-1. Open your browser and navigate to the WAMP phpMyAdmin interface:
+1. Open your browser and navigate to:
    - `http://localhost/phpmyadmin`
-2. Log in. (The default WAMP username is `root` with **no password**).
-3. In the left sidebar or the "Databases" tab, create a new database named **`cryptoverse`** with the collation `utf8mb4_unicode_ci`.
-4. Select the newly created `cryptoverse` database.
-5. Click on the **Import** tab at the top.
-6. Click **Choose File** and select the `database/schema.sql` file located in your `cryptoverse` project folder.
-7. Click **Go** at the bottom of the page to run the import. This will build all the required tables and insert the seed data (lessons, quizzes, and demo accounts).
+2. Log in (default username: `root`, no password).
+3. Create a new database named **`cryptoverse`** with collation `utf8mb4_unicode_ci`.
+4. Import `database/schema.sql` into the `cryptoverse` database.
 
-### 3. Launching the App
-1. Once the database is imported, verify the database credentials in `config/database.php` (if you are using the default WAMP setup, no changes are needed).
-2. Open your browser and navigate to:
-   - `http://localhost/cryptoverse/`
-3. You should see the CryptoVerse landing page!
+### 3. Launching via WAMP
+Navigate to:
+```
+http://localhost/cryptoverse/
+```
 
 ---
 
@@ -85,9 +106,14 @@ After database installation, the following demo student account is ready to use 
 
 ```text
 cryptoverse/
-├── .htaccess                 # Apache security headers & directory protection
-├── index.php                 # Landing page
-├── login.php                 # PHP secure authentication & session login
+├── server.js                 # Modern Node.js Express server & API routes
+├── db.js                     # Built-in SQLite database layer & auto-seeder
+├── views/                    # Express view templates (exact replica of PHP markup)
+├── services/                 # Backend services (live RSS news aggregator)
+│
+├── .htaccess                 # Apache security headers & directory protection (legacy)
+├── index.php                 # Landing page (PHP legacy)
+├── login.php                 # PHP authentication & login
 ├── signup.php                # PHP user registration
 ├── logout.php                # Session termination handler
 ├── dashboard.php             # Unified user command center & stats
@@ -104,19 +130,20 @@ cryptoverse/
 │   ├── trade_execute.php     # Atomic paper trading order execution
 │   └── wallet_reset.php      # Virtual wallet balance reset ($100k)
 │
-├── assets/                   # Static Frontend Assets
+├── assets/                   # Static Frontend Assets (100% UNTOUCHED & SHARED)
 │   ├── css/                  # Vanilla CSS stylesheets
 │   ├── images/               # Image assets
-│   └── js/                   # Vanilla JavaScript & Three.js logic
+│   └── js/                   # Vanilla JavaScript, Three.js & TradingView logic
 │
 ├── config/                   # Configuration Files (Protected)
 │   ├── config.php            # Global application settings & error handling
 │   └── database.php          # PDO connection singleton
 │
 ├── database/                 # Database Schemas & Migrations
+│   ├── cryptoverse.db        # SQLite database (auto-created for Node server)
 │   └── schema.sql            # Full MySQL schema & curriculum seed data
 │
-└── includes/                 # Core Backend Modules
+└── includes/                 # Core Backend Modules (PHP legacy)
     ├── auth.php              # Authentication & session service
     ├── functions.php         # Utility functions
     └── header.php            # Global header template
