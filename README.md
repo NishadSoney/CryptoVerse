@@ -1,7 +1,4 @@
-# CryptoVerse — Educational Cryptocurrency & Blockchain Platform (WAMP Version)
-
-> [!NOTE]
-> This is the **WAMP Version** of CryptoVerse, pre-configured for local running and deployment using WAMP Server (Windows, Apache, MySQL, PHP).
+# CryptoVerse — Educational Cryptocurrency & Blockchain Platform
 
 ## 📖 Introduction
 
@@ -10,6 +7,9 @@ Welcome to **CryptoVerse**, a comprehensive educational platform built to demyst
 Designed for both absolute beginners and advanced learners, CryptoVerse provides a safe, interactive, and engaging environment to learn about digital assets without any financial risk. Whether you are looking to understand the fundamental mechanics of blockchain, learn how to analyze cryptocurrency markets, or practice trading with a virtual portfolio, this platform has everything you need.
 
 Our mission is to bridge the knowledge gap in the Web3 space by combining guided theoretical lessons with hands-on, practical tools. By offering interactive cryptographic labs and a real-time simulated trading environment, we empower users to confidently navigate the decentralized economy.
+
+---
+
 ## 💡 Core Features & Innovations
 
 ### 1. Interactive 3D Blockchain Protocol Labs
@@ -35,24 +35,21 @@ Our mission is to bridge the knowledge gap in the Web3 space by combining guided
 
 ## 🏛️ Tech Stack
 
-CryptoVerse supports both a modern standalone Node.js backend (recommended, zero-config) and the legacy WAMP stack:
-
 - **Frontend**: HTML5, Vanilla CSS, Vanilla JavaScript. Built with **Three.js** for interactive 3D WebGL scenes, **IntersectionObserver** APIs for smooth scroll animations, **TradingView Lightweight Charts** for market visualization, and **Lucide Icons** for UI iconography. All frontend styles and scripts run natively in the browser without build tooling.
-- **Modern Backend (Active)**: **Node.js (v18+) & Express** with built-in SQLite (`node:sqlite`). Zero setup required — no external database server, no Apache, no WAMP needed.
-- **Legacy Backend (Optional)**: **PHP 8.0+** & **MySQL 8.0+** on Apache (WAMP/LAMP/XAMPP).
+- **Backend**: **Node.js (v18+) & Express** with built-in SQLite (`node:sqlite`). Zero setup required — no external database server, Apache, or MySQL needed.
 
 ---
 
-## ⚡ Quick Start (Modern Standalone — Recommended)
+## ⚡ Quick Start
 
-No Apache, WAMP, or MySQL installation required! The modern backend uses SQLite with all 20 tables and seed curriculum automatically pre-loaded.
+No external database installation required! The backend uses SQLite with all tables and seed curriculum automatically pre-loaded.
 
 ### 1. Install & Run
 ```bash
-# Clone or navigate to the project folder
+# Navigate to the project folder
 cd CryptoVerse-WAMP_Version
 
-# Install dependencies (Express, bcryptjs, session, etc.)
+# Install dependencies
 npm install
 
 # Start the server
@@ -64,38 +61,13 @@ Open your browser and navigate to:
 ```
 http://localhost:3000
 ```
-That's it! The database (`database/cryptoverse.db`) initializes automatically with all 16 curriculum lessons, interactive quizzes, glossary terms, and the pre-configured demo account.
-
----
-
-## 🚀 Alternative: WAMP Server Deployment (Legacy PHP)
-
-If you prefer running with traditional WAMP Server (Windows, Apache, MySQL, PHP):
-
-### 1. WAMP Installation & Setup
-1. Download and install [WampServer](https://www.wampserver.com/en/).
-2. Start WampServer. Ensure the WAMP tray icon in your Windows taskbar turns **GREEN**.
-3. Copy the entire `cryptoverse` project folder into your WAMP web root directory:
-   - `C:\wamp64\www\cryptoverse`
-
-### 2. Database Setup via phpMyAdmin
-1. Open your browser and navigate to:
-   - `http://localhost/phpmyadmin`
-2. Log in (default username: `root`, no password).
-3. Create a new database named **`cryptoverse`** with collation `utf8mb4_unicode_ci`.
-4. Import `database/schema.sql` into the `cryptoverse` database.
-
-### 3. Launching via WAMP
-Navigate to:
-```
-http://localhost/cryptoverse/
-```
+The database (`database/cryptoverse.db`) initializes automatically with all curriculum lessons, interactive quizzes, glossary terms, and the pre-configured demo account.
 
 ---
 
 ## 🔑 Demo User Credentials
 
-After database installation, the following demo student account is ready to use for testing:
+After initialization, the following demo student account is ready to use for testing:
 - **Email**: `student@cryptoverse.edu`
 - **Password**: `password123`
 - **Starting Virtual Balance**: `$100,000.00 USD` (Paper Trading)
@@ -105,53 +77,38 @@ After database installation, the following demo student account is ready to use 
 ## 📂 Project Directory Structure
 
 ```text
-cryptoverse/
-├── server.js                 # Modern Node.js Express server & API routes
+CryptoVerse-WAMP_Version/
+├── server.js                 # Node.js Express server & unified API routes
 ├── db.js                     # Built-in SQLite database layer & auto-seeder
-├── views/                    # Express view templates (exact replica of PHP markup)
-├── services/                 # Backend services (live RSS news aggregator)
-│
-├── .htaccess                 # Apache security headers & directory protection (legacy)
-├── index.php                 # Landing page (PHP legacy)
-├── login.php                 # PHP authentication & login
-├── signup.php                # PHP user registration
-├── logout.php                # Session termination handler
-├── dashboard.php             # Unified user command center & stats
-├── learn.php                 # Interactive curriculum hub & progress
-├── lesson.php                # Individual lesson viewer & quiz engine
-├── markets.php               # Live market discovery & dual-mode analytics
-├── practice.php              # $100k Virtual paper trading desk
-├── profile.php               # User settings and profile management
-│
-├── api/                      # RESTful PHP Endpoints
-│   ├── news.php              # Fetches cryptocurrency news
-│   ├── notes.php             # Personal student notes persistence
-│   ├── quiz_submit.php       # Quiz submission & XP reward engine
-│   ├── trade_execute.php     # Atomic paper trading order execution
-│   └── wallet_reset.php      # Virtual wallet balance reset ($100k)
-│
-├── assets/                   # Static Frontend Assets (100% UNTOUCHED & SHARED)
+├── views/                    # Express modular view templates
+│   ├── header.js             # Shared responsive navigation & header
+│   ├── landing.js            # Interactive 3D landing page view
+│   ├── login.js              # Authentication login view
+│   ├── signup.js             # User registration view
+│   ├── dashboard.js          # User command center & learning progress
+│   ├── learn.js              # Interactive curriculum hub
+│   ├── lesson.js             # Lesson viewer & interactive quiz engine
+│   ├── markets.js            # Live market discovery & analytics
+│   ├── practice.js           # $100k Virtual paper trading desk
+│   └── profile.js            # Account settings & trade export
+├── services/
+│   └── newsService.js        # Live RSS crypto news aggregator
+├── assets/                   # Static frontend assets
 │   ├── css/                  # Vanilla CSS stylesheets
 │   ├── images/               # Image assets
-│   └── js/                   # Vanilla JavaScript, Three.js & TradingView logic
-│
-├── config/                   # Configuration Files (Protected)
-│   ├── config.php            # Global application settings & error handling
-│   └── database.php          # PDO connection singleton
-│
-├── database/                 # Database Schemas & Migrations
-│   ├── cryptoverse.db        # SQLite database (auto-created for Node server)
-│   └── schema.sql            # Full MySQL schema & curriculum seed data
-│
-└── includes/                 # Core Backend Modules (PHP legacy)
-    ├── auth.php              # Authentication & session service
-    ├── functions.php         # Utility functions
-    └── header.php            # Global header template
+│   └── js/                   # Vanilla JavaScript, Three.js & charts
+├── database/
+│   ├── cryptoverse.db        # SQLite database (auto-seeded)
+│   └── schema.sql            # Seed curriculum and table blueprints
+├── metadata.json             # Project metadata
+├── package.json              # Dependencies and start scripts
+└── README.md                 # Project documentation
 ```
 
 ---
 
 ## 🛡️ Security & Best Practices
-- **Prepared Statements**: All database operations in PHP utilize PDO parameterized queries, preventing SQL injection.
-- **Session Protection**: Sessions regenerate session IDs upon login to prevent session fixation.
-- **Atomic Financial Transactions**: Trade executions utilize `PDO::beginTransaction()` and `commit()` to guarantee that cash deductions and asset quantities are updated atomically.
+- **Prepared Statements**: All database operations utilize SQLite prepared statements with parameter binding to prevent SQL injection.
+- **Session Protection**: HttpOnly session cookies with secure session secret management.
+- **Password Security**: Strong password hashing using `bcryptjs`.
+- **Atomic Financial Transactions**: Trade executions utilize SQLite transaction safeguards to ensure consistency for cash balance and asset quantities.
