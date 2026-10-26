@@ -1,6 +1,6 @@
 # CryptoVerse — Learn Crypto & Blockchain Without Financial Risk
 
-CryptoVerse is a web platform designed to make cryptocurrency and blockchain concepts accessible, visual, and risk-free. It pairs dual-track theoretical curriculum (plain English fundamentals alongside protocol specifications) with interactive cryptographic protocol labs and a simulated $100,000 paper trading environment.
+CryptoVerse is a web platform designed to make cryptocurrency and blockchain concepts accessible, visual, and risk-free. It pairs dual-track theoretical curriculum (plain English fundamentals alongside protocol specifications) with interactive cryptographic protocol labs and provides a real-time $100,000 paper trading balance to simulate the trading environment.
 
 ---
 
